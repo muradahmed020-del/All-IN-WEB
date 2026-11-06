@@ -7,6 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.1.4/dist/tesseract.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
@@ -348,6 +349,38 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
 .lkg-tip{padding:10px 12px;border-radius:12px;background:#fff8e6;border:1px solid #fde7a8;font-size:13.5px;line-height:1.6;color:#6b4e00;margin-bottom:14px}
 .lkg-go{display:block;text-align:center;padding:11px;border-radius:12px;background:var(--grad);color:#fff;text-decoration:none;font-weight:600}
 .lkg-note{margin:10px 0 0;color:var(--mute);font-size:12px;text-align:center}
+
+/* ===== OCR: ইমেজ/পিডিএফ থেকে টেক্সট ===== */
+#section-ocr{max-width:1100px;text-align:left}
+.upload-box.ocr-box{border-color:#86efac;background:linear-gradient(180deg,#f7fffa,#ecfdf3)}
+.ocr-prog{display:flex;align-items:center;gap:12px;margin:4px 0 16px;padding:10px 16px;border-radius:14px;background:#1e1b3a;color:#fff}
+.ocr-prog .ocr-st{font-size:13.5px;font-weight:700;color:#fbbf24;white-space:nowrap}
+.ocr-prog .ocr-bar{flex:1;height:10px;border-radius:6px;background:#3b3868;overflow:hidden}
+.ocr-prog .ocr-bar i{display:block;height:100%;width:0;background:#34d399;transition:width .3s}
+.ocr-prog .ocr-pc{min-width:42px;text-align:right;font-weight:700;color:#34d399;font-size:13.5px}
+.ocr-grid{display:grid;grid-template-columns:300px 1fr;gap:16px;align-items:stretch}
+.ocr-prev,.ocr-txt{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;box-shadow:var(--sh)}
+.ocr-prev h4,.ocr-txt h4{margin:0 0 10px;font-size:14px;color:var(--ink)}
+.ocr-prev canvas{display:block;max-width:100%;max-height:340px;margin:0 auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+.ocr-page{display:none;align-items:center;gap:8px;margin-top:12px;font-size:13px;color:var(--mute)}
+.ocr-page input{width:70px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;font:inherit}
+.ocr-txt{display:flex;flex-direction:column}
+.ocr-txt textarea{flex:1;min-height:320px;width:100%;padding:14px;border:1px solid var(--line);border-radius:12px;resize:vertical;font:inherit;font-size:15px;line-height:1.7;outline:none}
+.ocr-txt textarea:focus{border-color:var(--p1)}
+.ocr-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.ocr-btns button{padding:10px 18px;border:0;border-radius:12px;color:#fff;font-weight:700;font-size:14px;cursor:pointer;transition:.2s}
+.ocr-btns button:hover{transform:translateY(-2px);filter:brightness(.95)}
+.ocr-b-copy{background:#10b981}.ocr-b-doc{background:#f97316}.ocr-b-tg{background:#0088cc}
+@media(max-width:760px){.ocr-grid{grid-template-columns:1fr}}
+
+/* ===== ড্যাশবোর্ড: ছোট কার্ড ===== */
+.home-grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:16px}
+.home-grid .card{padding:14px 14px 12px;border-radius:14px}
+.home-grid .card-icon{width:38px;height:38px;font-size:19px;border-radius:11px;margin-bottom:10px}
+.home-grid .card h3{font-size:14px;margin-bottom:4px;line-height:1.35}
+.home-grid .card p{font-size:11.5px;line-height:1.5;padding-right:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.home-grid .card::after{display:none}
+.home-grid .card:hover{transform:translateY(-3px)}
 </style>
 </head>
 <body>
@@ -363,6 +396,7 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
     <li id="menu-photo5" onclick="openSectionInNewTab('photo5')">📸 ৫ পোর্ট সাইজ ফটো</li>
     <li id="menu-imgsz" onclick="openSectionInNewTab('imgsz')">🗜️ ছবির MB কমানো/বাড়ানো</li>
     <li id="menu-links" onclick="openSectionInNewTab('links')">⚡ ওয়েব লিংক হাব</li>
+    <li id="menu-ocr" onclick="openSectionInNewTab('ocr')">🔤 ইমেজ/পিডিএফ থেকে টেক্সট</li>
   </ul>
 </div>
 
@@ -381,6 +415,7 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
       <div class="card" onclick="openSectionInNewTab('photo5')"><div class="card-icon">📸</div><h3>৫ পোর্ট সাইজ ফটো</h3><p>কাস্টম মাপের ছবি তৈরি, A4/Letter পেজে সাজানো ও PDF প্রিন্ট</p></div>
       <div class="card" onclick="openSectionInNewTab('imgsz')"><div class="card-icon">🗜️</div><h3>ছবির MB কমানো/বাড়ানো</h3><p>ছবির ফাইল সাইজ KB/MB-তে নির্দিষ্ট করে কমান বা বাড়ান</p></div>
       <div class="card" onclick="openSectionInNewTab('links')"><div class="card-icon">⚡</div><h3>ওয়েব লিংক হাব</h3><p>সরকারি সেবা, আবেদন পোর্টাল ও জনপ্রিয় ওয়েবসাইটের লিংক এক জায়গায়</p></div>
+      <div class="card" onclick="openSectionInNewTab('ocr')"><div class="card-icon">🔤</div><h3>ইমেজ/পিডিএফ থেকে টেক্সট</h3><p>ছবি বা পিডিএফ থেকে বাংলা ও ইংরেজি লেখা বের করুন, কপি বা ওয়ার্ডে ডাউনলোড করুন</p></div>
     </div>
   </div>
 
@@ -585,6 +620,30 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
     </div>
   </div>
 
+  <div id="section-ocr" class="container">
+    <h2 class="section-title">🔤 ইমেজ/পিডিএফ থেকে টেক্সট</h2>
+    <p class="subtitle">ইমেজ বা পিডিএফ আপলোড করুন — বাংলা ও ইংরেজি লেখা স্বয়ংক্রিয়ভাবে টেক্সটে রূপান্তর হবে (OCR)। ফাইল আপনার ব্রাউজারেই প্রসেস হয়।</p>
+    <div class="upload-box ocr-box" onclick="document.getElementById('ocrInput').click()">
+      <span class="upload-btn">ফাইল আপলোড করুন</span>
+      <input type="file" id="ocrInput" accept="image/*,application/pdf" onchange="ocrHandleFile(event)">
+      <p id="ocrFileName" style="margin-top:10px;font-size:13px;color:#555">ইমেজ বা পিডিএফ ফাইল বেছে নিন</p>
+    </div>
+    <div class="ocr-prog"><span class="ocr-st" id="ocrStatus">রেডি</span><div class="ocr-bar"><i id="ocrBar"></i></div><span class="ocr-pc" id="ocrPercent">0%</span></div>
+    <div class="ocr-grid">
+      <div class="ocr-prev"><h4>ক্যানভাস প্রিভিউ</h4><canvas id="ocrCanvas" width="10" height="10"></canvas>
+        <div class="ocr-page" id="ocrPageRow">পিডিএফ পৃষ্ঠা নম্বর: <input type="number" id="ocrPageNo" min="1" value="1" onchange="ocrPageChanged()"><span id="ocrPageTotal"></span></div></div>
+      <div class="ocr-txt"><h4>এক্সট্র্যাক্ট করা টেক্সট:</h4>
+        <textarea id="ocrText" placeholder="এখানে আপনার এক্সট্র্যাক্ট হওয়া টেক্সট দেখাবে..."></textarea>
+        <div class="ocr-btns">
+          <button type="button" class="ocr-b-copy" onclick="ocrCopy()">টেক্সট কপি</button>
+          <button type="button" class="ocr-b-doc" onclick="ocrDownloadDoc()">ওয়ার্ড ফাইল ডাউনলোড (DOC)</button>
+          <button type="button" class="ocr-b-tg" onclick="ocrSendTelegram()">টেলিগ্রামে পাঠান</button>
+          <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--mute);cursor:pointer"><input type="checkbox" id="ocrKeepLines"> ওয়ার্ডে লাইন ব্রেক যেমন আছে তেমন রাখুন</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="section-imgsz" class="container">
     <h2 class="section-title">🗜️ ছবির MB কমানো / বাড়ানো</h2>
     <p class="subtitle">ছবি আপলোড করুন, কত KB/MB চান লিখুন — ছবির সাইজ ঠিক সেই মাপে কমে বা বাড়বে। একসাথে একাধিক ছবি করা যায়।</p>
@@ -693,7 +752,7 @@ function returnToPreviousPage(){
 function initSectionPageFromHash(){
   const raw=decodeURIComponent((window.location.hash||'').replace(/^#/,''));
   const id=raw==='photo5'?'photo5':(raw.startsWith('section=')?raw.slice(8):'');
-  const valid=['pdf2img','img2pdf','nid','fix','photo5','imgsz','links'];
+  const valid=['pdf2img','img2pdf','nid','fix','photo5','imgsz','links','ocr'];
   if(!valid.includes(id)){
     document.body.classList.remove('section-page-mode');
     switchSection('home');window.scrollTo(0,0);return;
@@ -1564,6 +1623,136 @@ async function imgszDownloadAll(){
   const z=await zip.generateAsync({type:'blob'});downloadFile(URL.createObjectURL(z),'images_resized.zip');
 }
 imgszChipInit();imgszModeChanged();
+
+/* ===== OCR: ইমেজ/পিডিএফ থেকে টেক্সট ===== */
+let ocrBusy=false,ocrFile=null,ocrPdfDoc=null;
+function ocrProgress(v,msg){
+  const p=Math.round(v*100);
+  document.getElementById('ocrBar').style.width=p+'%';
+  document.getElementById('ocrPercent').innerText=p+'%';
+  if(msg)document.getElementById('ocrStatus').innerText=msg;
+}
+async function ocrHandleFile(e){
+  const file=e.target.files[0];
+  if(!file)return;
+  if(ocrBusy){alert('আগের কাজ শেষ হওয়া পর্যন্ত অপেক্ষা করুন।');e.target.value='';return}
+  document.getElementById('ocrText').value='';
+  document.getElementById('ocrFileName').innerText=file.name;
+  document.getElementById('ocrPageRow').style.display='none';
+  ocrFile=file;ocrPdfDoc=null;
+  ocrProgress(0,'ফাইল লোড হচ্ছে...');
+  try{
+    if(file.type.startsWith('image/')){await ocrLoadImage(file)}
+    else if(file.type==='application/pdf'){await ocrLoadPdf(file,1)}
+    else{alert('অনুগ্রহ করে শুধুমাত্র ইমেজ অথবা পিডিএফ ফাইল নির্বাচন করুন।');ocrProgress(0,'ত্রুটি!');return}
+    await ocrExtract();
+  }catch(err){console.error(err);ocrProgress(0,'ফাইল পড়া যায়নি');ocrBusy=false}
+  e.target.value='';
+}
+function ocrLoadImage(file){
+  return new Promise((res,rej)=>{
+    const url=URL.createObjectURL(file),img=new Image();
+    img.onload=()=>{
+      const c=document.getElementById('ocrCanvas');
+      c.width=img.naturalWidth;c.height=img.naturalHeight;
+      c.getContext('2d').drawImage(img,0,0);
+      URL.revokeObjectURL(url);res();
+    };
+    img.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('image load failed'))};
+    img.src=url;
+  });
+}
+async function ocrLoadPdf(file,pageNo){
+  ocrProgress(0.1,'পিডিএফ পড়া হচ্ছে...');
+  if(!ocrPdfDoc){
+    const buf=new Uint8Array(await file.arrayBuffer());
+    ocrPdfDoc=await pdfjsLib.getDocument({data:buf}).promise;
+  }
+  const total=ocrPdfDoc.numPages;
+  pageNo=Math.min(Math.max(1,parseInt(pageNo)||1),total);
+  const inp=document.getElementById('ocrPageNo');
+  inp.max=total;inp.value=pageNo;
+  document.getElementById('ocrPageTotal').innerText='/ '+total;
+  document.getElementById('ocrPageRow').style.display='flex';
+  const page=await ocrPdfDoc.getPage(pageNo);
+  const vp=page.getViewport({scale:2});
+  const c=document.getElementById('ocrCanvas');
+  c.width=vp.width;c.height=vp.height;
+  await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+}
+async function ocrPageChanged(){
+  if(!ocrFile||!ocrPdfDoc||ocrBusy)return;
+  document.getElementById('ocrText').value='';
+  try{
+    await ocrLoadPdf(ocrFile,document.getElementById('ocrPageNo').value);
+    await ocrExtract();
+  }catch(err){console.error(err);ocrProgress(0,'ফাইল পড়া যায়নি');ocrBusy=false}
+}
+async function ocrExtract(){
+  if(typeof Tesseract==='undefined'){ocrProgress(0,'OCR লাইব্রেরি লোড হয়নি (ইন্টারনেট চেক করুন)');return}
+  ocrBusy=true;
+  ocrProgress(0.2,'এক্সট্র্যাক্ট শুরু হচ্ছে...');
+  try{
+    const r=await Tesseract.recognize(document.getElementById('ocrCanvas'),'ben+eng',{
+      logger:m=>{if(m.status==='recognizing text')ocrProgress(0.2+m.progress*0.8,'টেক্সট এক্সট্র্যাক্ট হচ্ছে...')}
+    });
+    document.getElementById('ocrText').value=r.data.text;
+    ocrProgress(1,'সম্পন্ন হয়েছে!');
+  }catch(err){console.error(err);ocrProgress(0,'এক্সট্র্যাক্ট ব্যর্থ হয়েছে')}
+  ocrBusy=false;
+}
+async function ocrCopy(){
+  const ta=document.getElementById('ocrText');
+  if(!ta.value)return;
+  try{await navigator.clipboard.writeText(ta.value)}
+  catch(e){ta.select();document.execCommand('copy')}
+  alert('টেক্সট কপি করা হয়েছে!');
+}
+function ocrDownloadDoc(){
+  const raw=document.getElementById('ocrText').value;
+  if(!raw.trim()){alert('ডাউনলোড করার মতো কোনো টেক্সট নেই!');return}
+  const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const keep=document.getElementById('ocrKeepLines').checked;
+  const text=raw.replace(/\r/g,'').replace(/[ \t\u00a0]+/g,' ');
+  let body;
+  if(keep){
+    /* প্রতিটি লাইন আলাদা প্যারাগ্রাফ, কোনো বাড়তি ফাঁকা নয় */
+    body=text.split('\n').map(l=>l.trim()?'<p class="l">'+esc(l.trim())+'</p>':'<p class="l">&nbsp;</p>').join('');
+  }else{
+    /* ফাঁকা লাইন দিয়ে প্যারাগ্রাফ ভাগ; প্যারাগ্রাফের ভেতরের লাইন ব্রেক স্পেস দিয়ে জোড়া */
+    body=text.split(/\n\s*\n/).map(p=>p.split('\n').map(l=>l.trim()).filter(Boolean).join(' ')).filter(Boolean).map(p=>'<p>'+esc(p)+'</p>').join('');
+  }
+  const html="<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Extracted Text</title><style>@page{size:A4;margin:2cm}body{font-family:'SolaimanLipi','Kalpurush','Nirmala UI',sans-serif;font-size:13pt}p{margin:0 0 8pt 0;line-height:130%;text-align:left}p.l{margin:0}</style></head><body>"+body+"</body></html>";
+  const blob=new Blob(['\ufeff'+html],{type:'application/msword'});
+  const url=URL.createObjectURL(blob),el=document.createElement('a');
+  el.href=url;el.download='extracted-text.doc';
+  document.body.appendChild(el);el.click();document.body.removeChild(el);
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+async function ocrSendTelegram(){
+  const text=document.getElementById('ocrText').value;
+  if(!text){alert('পাঠানোর মতো কোনো টেক্সট নেই!');return}
+  let token='';
+  try{token=localStorage.getItem('ocrTgToken')||''}catch(e){}
+  if(!token){
+    token=(prompt('আপনার Telegram Bot Token লিখুন (@BotFather থেকে পাওয়া):')||'').trim();
+    if(!token)return;
+  }
+  const chatId=(prompt('অনুগ্রহ করে আপনার Telegram Chat ID লিখুন:')||'').trim();
+  if(!chatId)return;
+  try{
+    for(let i=0;i<text.length;i+=4000){
+      const res=await fetch('https://api.telegram.org/bot'+token+'/sendMessage',{
+        method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({chat_id:chatId,text:text.slice(i,i+4000)})
+      });
+      const d=await res.json();
+      if(!d.ok){alert('পাঠাতে ব্যর্থ হয়েছে: '+d.description);return}
+    }
+    try{localStorage.setItem('ocrTgToken',token)}catch(e){}
+    alert('টেলিগ্রামে সফলভাবে পাঠানো হয়েছে!');
+  }catch(err){alert('ত্রুটি: '+err.message)}
+}
 
 /* ===== ওয়েব লিংক গাইড ===== */
 (function(){
