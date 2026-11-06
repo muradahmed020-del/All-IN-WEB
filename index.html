@@ -381,6 +381,69 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
 .home-grid .card p{font-size:11.5px;line-height:1.5;padding-right:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .home-grid .card::after{display:none}
 .home-grid .card:hover{transform:translateY(-3px)}
+
+/* ===== সাইডবার স্ক্রল ===== */
+.sidebar{overflow:hidden}
+.sidebar-header{flex-shrink:0}
+.sidebar-menu{flex:1 1 auto;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding-bottom:24px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent}
+.sidebar-menu::-webkit-scrollbar{width:6px}
+.sidebar-menu::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28);border-radius:6px}
+.sidebar-menu::-webkit-scrollbar-track{background:transparent}
+
+
+/* ===== বাংলাদেশ ক্যালকুলেটর ===== */
+#section-bdcalc{max-width:1000px;text-align:left}
+.bc-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.bc-tabs{display:flex;flex-wrap:wrap;gap:8px}
+.bc-tabs button{padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font:inherit;font-size:14px;font-weight:600;cursor:pointer;transition:.2s}
+.bc-tabs button:hover{border-color:#c7c9ff;color:var(--p1)}
+.bc-tabs button.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 8px 16px -8px rgba(99,102,241,.8)}
+.bc-dg{font-size:13px;color:var(--mute);cursor:pointer;display:flex;align-items:center;gap:6px}
+.bc-pane{display:none;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:var(--sh)}
+.bc-pane.on{display:block}
+.bc-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.bc-f{flex:1 1 170px;min-width:0}
+.bc-f label{display:block;font-size:12.5px;color:var(--mute);margin-bottom:5px;font-weight:600}
+.bc-f input,.bc-f select,.bc-f textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:15px;background:#fff;outline:none;color:var(--ink)}
+.bc-f input:focus,.bc-f select:focus,.bc-f textarea:focus{border-color:var(--p1)}
+.bc-f textarea{min-height:70px;resize:vertical}
+.bc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
+.bc-cell,.bc-card{background:#f7f8fe;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.bc-cell.me{background:#eef0ff;border-color:#c7c9ff}
+.bc-cell small,.bc-card small{display:block;color:var(--mute);font-size:12px;margin-bottom:3px}
+.bc-cell b,.bc-card b{font-size:17px;color:var(--ink);word-break:break-word}
+.bc-card.big b{font-size:22px;color:var(--p1)}
+.bc-card .bc-cp{float:right;padding:4px 10px;border:0;border-radius:8px;background:#eef0ff;color:var(--p1);font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.bc-words{font-size:17px;line-height:1.7;font-weight:600;color:var(--ink);word-break:break-word}
+.bc-note{margin-top:12px;padding:10px 12px;border-radius:12px;background:#fff8e6;border:1px solid #fde7a8;color:#6b4e00;font-size:12.5px;line-height:1.7}
+.bc-h{margin:16px 0 10px;font-size:15px;color:var(--ink)}
+.bc-mini{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.bc-mini button{padding:7px 14px;border:1px solid var(--line);border-radius:10px;background:#f7f8fe;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;color:var(--ink)}
+.bc-mini button.on{background:#eef0ff;border-color:var(--p1);color:var(--p1)}
+.bc-sub{display:none}.bc-sub.on{display:block}
+.dl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-bottom:12px}
+.dl-grid .bc-f label{font-size:12px;text-align:center}
+.dl-grid .bc-f input{padding:9px 6px;text-align:center;font-size:15px}
+.dl-res{background:#eef0ff;border:1px solid #c7c9ff;border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.dl-res small{display:block;color:var(--mute);font-size:12px;margin-bottom:4px}
+.dl-res .bc-words{font-size:18px}
+.dl-res .bc-cp{float:right;padding:4px 10px;border:0;border-radius:8px;background:#fff;color:var(--p1);font:inherit;font-size:12px;font-weight:700;cursor:pointer}
+.dl-ratio{margin-top:10px;font-size:13px;color:var(--mute)}
+.dl-ratio summary{cursor:pointer;font-weight:600;color:var(--ink)}
+
+.hs-row{display:flex;flex-wrap:wrap;gap:6px;align-items:flex-end;margin-bottom:8px;padding:8px;border:1px solid var(--line);border-radius:12px;background:#fafbff}
+.hs-row .bc-f{flex:0 1 66px}.hs-row .bc-f.nm{flex:1 1 130px}
+.hs-row .bc-f label{font-size:11.5px}
+.hs-row .bc-f input{padding:9px 6px;font-size:14.5px}.hs-row .bc-f.nm input{text-align:left;padding:9px 10px}.hs-row .bc-f:not(.nm) input{text-align:center}
+.hs-del{border:0;background:#ffe8e8;color:#c0392b;border-radius:10px;padding:9px 12px;font:inherit;font-weight:700;cursor:pointer}
+.hs-add{padding:9px 16px;border:1px dashed var(--p1);border-radius:12px;background:#fff;color:var(--p1);font:inherit;font-weight:700;cursor:pointer;margin-bottom:12px}
+.hs-tbl{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+.hs-tbl th,.hs-tbl td{border:1px solid var(--line);padding:7px 8px;text-align:center}
+.hs-tbl th{background:#eef0ff;color:var(--ink);font-size:13px}
+.hs-wrap{overflow-x:auto}
+.dl-op{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}
+.dl-op label{display:flex;align-items:center;gap:6px;padding:8px 14px;border:1px solid var(--line);border-radius:10px;background:#f7f8fe;font-size:14px;font-weight:600;cursor:pointer}
+
 </style>
 </head>
 <body>
@@ -397,6 +460,7 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
     <li id="menu-imgsz" onclick="openSectionInNewTab('imgsz')">🗜️ ছবির MB কমানো/বাড়ানো</li>
     <li id="menu-links" onclick="openSectionInNewTab('links')">⚡ ওয়েব লিংক হাব</li>
     <li id="menu-ocr" onclick="openSectionInNewTab('ocr')">🔤 ইমেজ/পিডিএফ থেকে টেক্সট</li>
+    <li id="menu-bdcalc" onclick="openSectionInNewTab('bdcalc')">🧮 বাংলাদেশ ক্যালকুলেটর</li>
   </ul>
 </div>
 
@@ -416,6 +480,7 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
       <div class="card" onclick="openSectionInNewTab('imgsz')"><div class="card-icon">🗜️</div><h3>ছবির MB কমানো/বাড়ানো</h3><p>ছবির ফাইল সাইজ KB/MB-তে নির্দিষ্ট করে কমান বা বাড়ান</p></div>
       <div class="card" onclick="openSectionInNewTab('links')"><div class="card-icon">⚡</div><h3>ওয়েব লিংক হাব</h3><p>সরকারি সেবা, আবেদন পোর্টাল ও জনপ্রিয় ওয়েবসাইটের লিংক এক জায়গায়</p></div>
       <div class="card" onclick="openSectionInNewTab('ocr')"><div class="card-icon">🔤</div><h3>ইমেজ/পিডিএফ থেকে টেক্সট</h3><p>ছবি বা পিডিএফ থেকে বাংলা ও ইংরেজি লেখা বের করুন, কপি বা ওয়ার্ডে ডাউনলোড করুন</p></div>
+      <div class="card" onclick="openSectionInNewTab('bdcalc')"><div class="card-icon">🧮</div><h3>বাংলাদেশ ক্যালকুলেটর</h3><p>জমির ইউনিট, টাকা কথায়, বাংলা তারিখ, বয়স, সুদ ও কিস্তি</p></div>
     </div>
   </div>
 
@@ -644,6 +709,274 @@ body.section-page-mode #section-photo5 .photo5-preview-wrap{overflow:auto;oversc
     </div>
   </div>
 
+  <div id="section-bdcalc" class="container">
+    <h2 class="section-title">🧮 বাংলাদেশ ক্যালকুলেটর ও কনভার্টার</h2>
+    <p class="subtitle">জমির ইউনিট, টাকা কথায়, বাংলা/ইংরেজি তারিখ, বয়স ও ব্যাংকের সুদ-কিস্তি — সব এক জায়গায়। লিখতে লিখতেই ফলাফল দেখা যায়।</p>
+    <div class="bc-top">
+      <div class="bc-tabs" id="bcTabs">
+        <button type="button" class="on" onclick="bcTab('land')">📐 জমির ইউনিট</button>
+        <button type="button" onclick="bcTab('dolil')">📜 দলিলের হিসাব</button>
+        <button type="button" onclick="bcTab('taka')">💰 টাকা কথায়</button>
+        <button type="button" onclick="bcTab('date')">📅 সংখ্যা ও তারিখ</button>
+        <button type="button" onclick="bcTab('age')">🎂 বয়স</button>
+        <button type="button" onclick="bcTab('int')">🏦 সুদ ও কিস্তি</button>
+      </div>
+      <label class="bc-dg"><input type="checkbox" id="bcBn" checked> ফলাফল বাংলা অঙ্কে</label>
+    </div>
+
+    <div class="bc-pane on" id="bc-land">
+      <div class="bc-row">
+        <div class="bc-f"><label>পরিমাণ</label><input id="bcLandV" inputmode="decimal" value="1"></div>
+        <div class="bc-f"><label>কোন একক থেকে</label><select id="bcLandU"><option value="sqft">বর্গফুট</option><option value="sqyd">বর্গগজ</option><option value="sqm">বর্গমিটার</option><option value="sqhat">বর্গহাত</option><option value="chhatak">ছটাক</option><option value="katha">কাঠা</option><option value="bigha">বিঘা</option><option value="shotok" selected>শতক</option><option value="acre">একর</option><option value="hectare">হেক্টর</option></select></div>
+        <div class="bc-f"><label>১ কাঠা = কত বর্গফুট</label><input id="bcKatha" inputmode="decimal" value="720"></div>
+      </div>
+      <div class="bc-grid" id="bcLandOut"></div>
+      <div class="bc-note">ধরা হয়েছে: ১ শতক = ৪৩৫.৬ বর্গফুট, ১ একর = ১০০ শতক, ১ বিঘা = ২০ কাঠা, ১ কাঠা = ১৬ ছটাক। কাঠার মাপ এলাকাভেদে আলাদা হতে পারে (সাধারণত ৭২০ বর্গফুট), তাই ওপরের ঘরে নিজের এলাকার মাপ বসিয়ে নিতে পারেন। আনুষ্ঠানিক কাজে খতিয়ান/দলিলের মাপই চূড়ান্ত।</div>
+    </div>
+
+
+    <div class="bc-pane" id="bc-dolil">
+      <div class="bc-mini" id="dlTabs">
+        <button type="button" class="on" onclick="dlTab('a')">⬇️ মাপ → দলিলের লেখা</button>
+        <button type="button" onclick="dlTab('b')">⬆️ দলিলের মাপ → শতক/বর্গফুট</button>
+        <button type="button" onclick="dlTab('c')">➕ যোগ / বিয়োগ / ভাগ</button>
+        <button type="button" onclick="dlTab('d')">🥧 আনা হিস্যা</button>
+        <button type="button" onclick="dlTab('e')">🔢 ১০০০ হিস্যা</button>
+        <button type="button" onclick="dlTab('f')">↩️ জমি → হিস্যা</button>
+        <button type="button" onclick="dlTab('g')">🧾 রেজিস্ট্রেশন খরচ</button>
+        <button type="button" onclick="dlTab('h')">⚖️ ওয়ারিশ হিস্যা</button>
+      </div>
+
+      <div class="bc-sub on" id="dl-a">
+        <div class="bc-row">
+          <div class="bc-f"><label>পরিমাণ</label><input id="dlAV" inputmode="decimal" value="5"></div>
+          <div class="bc-f"><label>কোন একক থেকে</label><select id="dlAU">
+            <option value="shotok" selected>শতক / শতাংশ</option><option value="sqft">বর্গফুট</option><option value="sqyd">বর্গগজ</option><option value="sqm">বর্গমিটার</option><option value="sqhat">বর্গহাত</option>
+            <option value="bigha">বিঘা</option><option value="katha">কাঠা</option><option value="chhatak">ছটাক</option><option value="gonda">গণ্ডা</option><option value="kora">কড়া</option><option value="kranti">ক্রান্তি</option><option value="til">তিল</option>
+            <option value="ayut">অযুতাংশ</option><option value="acre">একর</option><option value="hectare">হেক্টর</option></select></div>
+        </div>
+        <div class="dl-res"><small>বিঘা-কাঠা পদ্ধতিতে (দলিলের লেখা) <button type="button" class="bc-cp" onclick="bcCopy('dlAOut1')">কপি</button></small><div class="bc-words" id="dlAOut1"></div></div>
+        <div class="dl-res"><small>একর-শতাংশ পদ্ধতিতে <button type="button" class="bc-cp" onclick="bcCopy('dlAOut2')">কপি</button></small><div class="bc-words" id="dlAOut2"></div></div>
+        <div class="bc-grid" id="dlAGrid"></div>
+      </div>
+
+      <div class="bc-sub" id="dl-b">
+        <h4 class="bc-h" style="margin-top:0">বিঘা-কাঠা পদ্ধতি (যেটুকু আছে সেটুকুই লিখুন)</h4>
+        <div class="dl-grid"><div class="bc-f"><label>বিঘা</label><input id="dlBBigha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কাঠা</label><input id="dlBKatha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ছটাক</label><input id="dlBChhatak" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>গণ্ডা</label><input id="dlBGonda" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কড়া</label><input id="dlBKora" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ক্রান্তি</label><input id="dlBKranti" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>তিল</label><input id="dlBTil" inputmode="decimal" placeholder="০"></div></div>
+        <h4 class="bc-h">একর-শতাংশ পদ্ধতি</h4>
+        <div class="dl-grid" style="grid-template-columns:repeat(3,minmax(92px,1fr))"><div class="bc-f"><label>একর</label><input id="dlBAcre" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>শতাংশ</label><input id="dlBShatak" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>অযুতাংশ</label><input id="dlBAyut" inputmode="decimal" placeholder="০"></div></div>
+        <div class="dl-res"><small>সবকিছু যোগ করে দলিলের লেখা (বিঘা-কাঠা) <button type="button" class="bc-cp" onclick="bcCopy('dlBOut1')">কপি</button></small><div class="bc-words" id="dlBOut1"></div></div>
+        <div class="dl-res"><small>একর-শতাংশ পদ্ধতিতে <button type="button" class="bc-cp" onclick="bcCopy('dlBOut2')">কপি</button></small><div class="bc-words" id="dlBOut2"></div></div>
+        <div class="bc-grid" id="dlBGrid"></div>
+      </div>
+
+      <div class="bc-sub" id="dl-c">
+        <div class="dl-op">
+          <label><input type="radio" name="dlOp" value="add" checked> ➕ যোগ (A + B)</label>
+          <label><input type="radio" name="dlOp" value="sub"> ➖ বিয়োগ (A − B)</label>
+          <label><input type="radio" name="dlOp" value="div"> ➗ সমান ভাগ (A ÷ জন)</label>
+        </div>
+        <h4 class="bc-h" style="margin-top:0">মাপ A (মোট জমি)</h4>
+        <div class="dl-grid"><div class="bc-f"><label>বিঘা</label><input id="dlC1Bigha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কাঠা</label><input id="dlC1Katha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ছটাক</label><input id="dlC1Chhatak" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>গণ্ডা</label><input id="dlC1Gonda" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কড়া</label><input id="dlC1Kora" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ক্রান্তি</label><input id="dlC1Kranti" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>তিল</label><input id="dlC1Til" inputmode="decimal" placeholder="০"></div></div>
+        <div id="dlC2Wrap">
+          <h4 class="bc-h">মাপ B (বিক্রি / যোগ হবে যেটা)</h4>
+          <div class="dl-grid"><div class="bc-f"><label>বিঘা</label><input id="dlC2Bigha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কাঠা</label><input id="dlC2Katha" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ছটাক</label><input id="dlC2Chhatak" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>গণ্ডা</label><input id="dlC2Gonda" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>কড়া</label><input id="dlC2Kora" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>ক্রান্তি</label><input id="dlC2Kranti" inputmode="decimal" placeholder="০"></div><div class="bc-f"><label>তিল</label><input id="dlC2Til" inputmode="decimal" placeholder="০"></div></div>
+        </div>
+        <div id="dlCNWrap" style="display:none" class="bc-row"><div class="bc-f"><label>কত জনে ভাগ হবে</label><input id="dlCN" inputmode="decimal" value="2"></div></div>
+        <div class="dl-res"><small id="dlCLabel">ফলাফল (দলিলের লেখা) </small><div class="bc-words" id="dlCOut1"></div></div>
+        <div class="bc-grid" id="dlCGrid"></div>
+      </div>
+
+
+      <div class="bc-sub" id="dl-d">
+        <div class="bc-row">
+          <div class="bc-f"><label>মোট জমির পরিমাণ</label><input id="hsLand" inputmode="decimal" value="100"></div>
+          <div class="bc-f"><label>একক</label><select id="hsUnit"><option value="shotok" selected>শতক / শতাংশ</option><option value="sqft">বর্গফুট</option><option value="katha">কাঠা</option><option value="bigha">বিঘা</option><option value="acre">একর</option><option value="ayut">অযুতাংশ</option><option value="sqm">বর্গমিটার</option><option value="sqyd">বর্গগজ</option></select></div>
+        </div>
+        <h4 class="bc-h" style="margin-top:4px">মালিক ও তাদের হিস্যা (১৬ আনা = পুরো সম্পত্তি)</h4>
+        <div id="hsRows"></div>
+        <button type="button" class="hs-add" onclick="hsAddRow()">➕ আরেকজন মালিক যোগ করুন</button>
+        <div id="hsSum" class="dl-res" style="margin-bottom:10px"></div>
+        <div id="hsOut"></div>
+        <h4 class="bc-h">📋 ১ আনা থেকে ১৬ আনা — ছক (ওপরের মোট জমি অনুযায়ী)</h4>
+        <div class="hs-wrap"><table class="hs-tbl"><thead><tr><th>আনা</th><th>ভগ্নাংশ</th><th>শতকরা (%)</th><th>জমি (শতক)</th><th>দলিলের মাপ</th></tr></thead><tbody id="hsTbl"></tbody></table></div>
+        <div class="bc-note">হিস্যার মাপ: ১৬ আনা = ১ টাকা (পূর্ণ মালিকানা), ১ আনা = ২০ গণ্ডা, ১ গণ্ডা = ৪ কড়া, ১ কড়া = ৩ ক্রান্তি, ১ ক্রান্তি = ২০ তিল (অর্থাৎ ১ আনা = ৪৮০০ তিল)। প্রতিটি ঘরে যতটুকু আছে ততটুকুই লিখুন, বাকি ঘর ফাঁকা রাখুন। জমির দলিলের মাপ বের করতে "মাপের অনুপাত" অংশের কাঠা-ছটাক মানই ব্যবহার হয়। আনুষ্ঠানিক কাজে মূল দলিল/খতিয়ানের হিস্যাই চূড়ান্ত।</div>
+      </div>
+
+
+      <div class="bc-sub" id="dl-e">
+        <div class="bc-row">
+          <div class="bc-f"><label>মোট জমির পরিমাণ</label><input id="ptLand" inputmode="decimal" value="100"></div>
+          <div class="bc-f"><label>একক</label><select id="ptUnit"><option value="shotok" selected>শতক / শতাংশ</option><option value="sqft">বর্গফুট</option><option value="katha">কাঠা</option><option value="bigha">বিঘা</option><option value="acre">একর</option><option value="ayut">অযুতাংশ</option><option value="sqm">বর্গমিটার</option><option value="sqyd">বর্গগজ</option></select></div>
+          <div class="bc-f"><label>মোট হিস্যা (নির্ধারিত)</label><input value="১০০০" disabled></div>
+        </div>
+        <h4 class="bc-h" style="margin-top:4px">মালিক ও তাদের হিস্যা (মোট ১০০০ এর মধ্যে)</h4>
+        <div id="ptRows"></div>
+        <button type="button" class="hs-add" onclick="ptAddRow()">➕ আরেকজন মালিক যোগ করুন</button>
+        <div id="ptSum" class="dl-res" style="margin-bottom:10px"></div>
+        <div id="ptOut"></div>
+        <div class="bc-note">এখানে পুরো সম্পত্তি = ১০০০ হিস্যা। কারও জমি = মোট জমি × (তার হিস্যা ÷ ১০০০)। সবার হিস্যার যোগফল ১০০০-এর বেশি হতে পারে না; বেশি হলে ঘরের সংখ্যা নিজে থেকে সীমায় নেমে আসে। দশমিক সংখ্যাও চলবে (যেমন ১২৫.৫)। দলিলের মাপ বের করতে "মাপের অনুপাত" অংশের কাঠা-ছটাক মান ব্যবহার হয়।</div>
+      </div>
+
+
+      <div class="bc-sub" id="dl-f">
+        <div class="bc-row">
+          <div class="bc-f"><label>মোট জমির পরিমাণ</label><input id="rvLand" inputmode="decimal" value="100"></div>
+          <div class="bc-f"><label>একক (নিচের সব পরিমাণও এই এককে)</label><select id="rvUnit"><option value="shotok" selected>শতক / শতাংশ</option><option value="sqft">বর্গফুট</option><option value="katha">কাঠা</option><option value="bigha">বিঘা</option><option value="acre">একর</option><option value="ayut">অযুতাংশ</option><option value="sqm">বর্গমিটার</option><option value="sqyd">বর্গগজ</option></select></div>
+        </div>
+        <h4 class="bc-h" style="margin-top:4px">কে কত জমি পাবে</h4>
+        <div id="rvRows"></div>
+        <button type="button" class="hs-add" onclick="rvAddRow()">➕ আরেকজন মালিক যোগ করুন</button>
+        <div id="rvSum" class="dl-res" style="margin-bottom:10px"></div>
+        <div id="rvOut"></div>
+        <div class="bc-note">প্রত্যেকের জমি লিখলে মোট জমির তুলনায় তার হিস্যা বের হয়: ১০০০ এর মধ্যে কত, ১৬ আনার হিসাবে কত আনা-গণ্ডা-কড়া-ক্রান্তি-তিল এবং শতকরা কত। সবার জমির যোগফল মোট জমির বেশি হতে পারে না; বেশি হলে ঘরের সংখ্যা নিজে থেকে সীমায় নেমে আসে। আনা হিস্যায় ১ আনা = ২০ গণ্ডা, ১ গণ্ডা = ৪ কড়া, ১ কড়া = ৩ ক্রান্তি, ১ ক্রান্তি = ২০ তিল।</div>
+      </div>
+
+
+      <div class="bc-sub" id="dl-g">
+        <div class="bc-row">
+          <div class="bc-f"><label>জমির পরিমাণ (শতক)</label><input id="rgLand" inputmode="decimal" value="5"></div>
+          <div class="bc-f"><label>প্রতি শতকের দাম (৳)</label><input id="rgPrice" inputmode="decimal" value="500000"></div>
+          <div class="bc-f"><label>অথবা সরাসরি মোট দলিল মূল্য (৳, ঐচ্ছিক)</label><input id="rgTotal" inputmode="decimal" placeholder="দিলে ওপরের হিসাব বাদ"></div>
+        </div>
+        <div class="bc-row">
+          <div class="bc-f"><label>জমির এলাকা (উৎসে করের হারের জন্য)</label><select id="rgAreaSel">
+            <option value="5" selected>ঢাকা ও চট্টগ্রাম সিটি করপোরেশন (৫%)</option>
+            <option value="3">অন্যান্য সিটি করপোরেশন (৩%)</option>
+            <option value="2">পৌরসভা ও অন্যান্য এলাকা (২%)</option>
+            <option value="x">নিজে হার বসাব</option></select></div>
+        </div>
+        <details class="dl-ratio" open>
+          <summary>⚙️ হার (শতকরা) — দরকার হলে বদলান</summary>
+          <div class="bc-row" style="margin-top:10px">
+            <div class="bc-f"><label>স্ট্যাম্প শুল্ক %</label><input id="rgStamp" inputmode="decimal" value="1.5"></div>
+            <div class="bc-f"><label>রেজিস্ট্রেশন ফি %</label><input id="rgReg" inputmode="decimal" value="1"></div>
+            <div class="bc-f"><label>স্থানীয় সরকার কর %</label><input id="rgLg" inputmode="decimal" value="3"></div>
+            <div class="bc-f"><label>ভ্যাট %</label><input id="rgVat" inputmode="decimal" value="2"></div>
+            <div class="bc-f"><label>উৎসে কর (গেইন ট্যাক্স) %</label><input id="rgTds" inputmode="decimal" value="5"></div>
+            <div class="bc-f"><label>ন্যূনতম উৎসে কর, কাঠাপ্রতি ৳ (থাকলে)</label><input id="rgTdsMin" inputmode="decimal" placeholder="০"></div>
+            <div class="bc-f"><label>অন্যান্য নির্দিষ্ট খরচ ৳ (হলফনামা, ই-ফি, এন-ফি, কোর্ট ফি, দলিল লেখক ইত্যাদি)</label><input id="rgOther" inputmode="decimal" placeholder="০"></div>
+          </div>
+        </details>
+        <div class="dl-res" style="margin-top:12px"><small>আনুমানিক মোট রেজিস্ট্রেশন খরচ <button type="button" class="bc-cp" onclick="bcCopy('rgTotalOut')">কপি</button></small><div class="bc-words" id="rgTotalOut"></div><div style="font-size:13px;margin-top:6px;color:var(--mute)" id="rgTotalWords"></div></div>
+        <div class="hs-wrap"><table class="hs-tbl"><thead><tr><th>খাত</th><th>হার</th><th>টাকা (৳)</th></tr></thead><tbody id="rgTbl"></tbody></table></div>
+        <div class="bc-note">এটি শুধু আনুমানিক হিসাব। ডিফল্ট হার সংবাদমাধ্যমে প্রকাশিত ২০২৫-২৬ অর্থবছর ও ২০২৬ সালের প্রতিবেদন অনুযায়ী: স্ট্যাম্প শুল্ক ১.৫%, রেজিস্ট্রেশন ফি ১%, স্থানীয় সরকার কর ৩% (কোথাও ২%), জমি/প্লটে ভ্যাট ২% এবং উৎসে কর ৫% / ৩% / ২%। ২০২৬-২৭ অর্থবছরের বাজেটে বা পরে কোনো হার বদলেছে কি না আমি নিশ্চিত হতে পারিনি। হার এলাকা, জমির শ্রেণি ও দলিলের ধরনভেদে আলাদা হতে পারে, এবং সরকার নির্ধারিত ন্যূনতম (মৌজা) মূল্যের নিচে সাধারণত দলিল করা যায় না। চূড়ান্ত খরচ জানতে স্থানীয় সাব-রেজিস্ট্রার অফিস বা সরকারি নিবন্ধন-খরচ ক্যালকুলেটরে মিলিয়ে নিন।</div>
+      </div>
+
+      <div class="bc-sub" id="dl-h">
+        <div class="bc-row">
+          <div class="bc-f"><label>মৃত ব্যক্তি</label><select id="wsG"><option value="m" selected>পুরুষ</option><option value="f">মহিলা</option></select></div>
+          <div class="bc-f"><label id="wsSpL">স্ত্রীর সংখ্যা (০–৪)</label><input id="wsSp" inputmode="numeric" value="1"></div>
+          <div class="bc-f"><label>ছেলের সংখ্যা</label><input id="wsSon" inputmode="numeric" value="2"></div>
+          <div class="bc-f"><label>মেয়ের সংখ্যা</label><input id="wsDau" inputmode="numeric" value="1"></div>
+        </div>
+        <div class="dl-op">
+          <label><input type="checkbox" id="wsFa"> পিতা জীবিত</label>
+          <label><input type="checkbox" id="wsMo"> মাতা জীবিত</label>
+        </div>
+        <div class="bc-row">
+          <div class="bc-f"><label>রেখে যাওয়া মোট জমি (ঐচ্ছিক)</label><input id="wsLand" inputmode="decimal" value="100"></div>
+          <div class="bc-f"><label>একক</label><select id="wsUnit"><option value="shotok" selected>শতক / শতাংশ</option><option value="sqft">বর্গফুট</option><option value="katha">কাঠা</option><option value="bigha">বিঘা</option><option value="acre">একর</option><option value="ayut">অযুতাংশ</option><option value="sqm">বর্গমিটার</option><option value="sqyd">বর্গগজ</option></select></div>
+        </div>
+        <div id="wsWarn"></div>
+        <div id="wsOut"></div>
+        <div id="wsSum" class="dl-res" style="margin-top:6px"></div>
+        <div class="bc-note">এটি মুসলিম (হানাফি) ফারায়েজ নিয়মে স্বামী/স্ত্রী, ছেলে, মেয়ে, পিতা ও মাতার সাধারণ হিসাব। ঋণ ও ওসিয়ত (সর্বোচ্চ ১/৩) বাদ দেওয়ার পর অবশিষ্ট সম্পত্তির ওপর এই ভাগ হয়। ভাই-বোন, দাদা-দাদি, নানি, মৃত সন্তানের সন্তান বা অন্য আত্মীয় থাকলে ফল আলাদা হতে পারে, তাই সেগুলো এখানে ধরা হয়নি। হিন্দু, বৌদ্ধ ও খ্রিস্টান ধর্মের জন্য আলাদা আইন প্রযোজ্য। শুধু আনুমানিক ধারণার জন্য; ওয়ারিশ সনদ, নামজারি বা আদালতের কাজে অভিজ্ঞ আইনজীবী বা আলেমের পরামর্শ নিন।</div>
+      </div>
+
+      <details class="dl-ratio">
+        <summary>⚙️ মাপের অনুপাত (এলাকাভেদে বদলানো যায়)</summary>
+        <div class="bc-row" style="margin-top:10px">
+          <div class="bc-f"><label>১ কাঠা = কত বর্গফুট</label><input id="dlK" inputmode="decimal" value="720"></div>
+          <div class="bc-f"><label>১ বিঘা = কত কাঠা</label><input id="dlRBigha" inputmode="decimal" value="20"></div>
+          <div class="bc-f"><label>১ কাঠা = কত ছটাক</label><input id="dlRKatha" inputmode="decimal" value="16"></div>
+          <div class="bc-f"><label>১ ছটাক = কত গণ্ডা</label><input id="dlRChh" inputmode="decimal" value="5"></div>
+          <div class="bc-f"><label>১ গণ্ডা = কত কড়া</label><input id="dlRGonda" inputmode="decimal" value="4"></div>
+          <div class="bc-f"><label>১ কড়া = কত ক্রান্তি</label><input id="dlRKora" inputmode="decimal" value="3"></div>
+          <div class="bc-f"><label>১ ক্রান্তি = কত তিল</label><input id="dlRKr" inputmode="decimal" value="20"></div>
+        </div>
+      </details>
+      <div class="bc-note">ডিফল্ট অনুপাত: ১ বিঘা = ২০ কাঠা, ১ কাঠা = ১৬ ছটাক, ১ ছটাক = ৫ গণ্ডা, ১ গণ্ডা = ৪ কড়া, ১ কড়া = ৩ ক্রান্তি, ১ ক্রান্তি = ২০ তিল। একর-শতাংশ পদ্ধতিতে ১ একর = ১০০ শতাংশ, ১ শতাংশ = ১০০ অযুতাংশ (= ৪৩৫.৬ বর্গফুট)। কাঠা, গণ্ডা ইত্যাদির মাপ এলাকা ও খতিয়ানভেদে আলাদা হতে পারে, তাই দরকার হলে ওপরের "মাপের অনুপাত" অংশে নিজের এলাকার মান বসান। তিলের নিচের অংশ ২ দশমিক ঘর পর্যন্ত ধরা হয়। আনুষ্ঠানিক কাজে মূল দলিল/খতিয়ানের মাপই চূড়ান্ত।</div>
+    </div>
+
+    <div class="bc-pane" id="bc-taka">
+      <div class="bc-row"><div class="bc-f"><label>টাকার পরিমাণ (বাংলা বা ইংরেজি অঙ্ক, কমা চলবে)</label><input id="bcTkIn" inputmode="decimal" value="125000.50"></div></div>
+      <div class="bc-card big" style="margin-bottom:10px"><small>বাংলায় <button type="button" class="bc-cp" onclick="bcCopy('bcTkBn')">কপি</button></small><div class="bc-words" id="bcTkBn"></div></div>
+      <div class="bc-card"><small>In English <button type="button" class="bc-cp" onclick="bcCopy('bcTkEn')">Copy</button></small><div class="bc-words" id="bcTkEn"></div></div>
+      <div class="bc-note">ভাউচার, চেক বা রসিদে ব্যবহারের আগে একবার মিলিয়ে নিন। পয়সা সর্বোচ্চ ২ ঘর পর্যন্ত ধরা হয়।</div>
+    </div>
+
+    <div class="bc-pane" id="bc-date">
+      <h4 class="bc-h" style="margin-top:0">🔢 বাংলা ↔ ইংরেজি অঙ্ক</h4>
+      <div class="bc-row"><div class="bc-f"><label>যেকোনো লেখা বা সংখ্যা</label><textarea id="bcDgIn">১২৩৪ and 5678</textarea></div></div>
+      <div class="bc-grid" style="grid-template-columns:1fr 1fr">
+        <div class="bc-card"><small>বাংলা অঙ্কে <button type="button" class="bc-cp" onclick="bcCopy('bcDgBn')">কপি</button></small><div class="bc-words" id="bcDgBn"></div></div>
+        <div class="bc-card"><small>English digits <button type="button" class="bc-cp" onclick="bcCopy('bcDgEn')">Copy</button></small><div class="bc-words" id="bcDgEn"></div></div>
+      </div>
+      <h4 class="bc-h">📆 ইংরেজি তারিখ → বাংলা সন ও হিজরি</h4>
+      <div class="bc-row">
+        <div class="bc-f"><label>ইংরেজি তারিখ</label><input type="date" id="bcGd"></div>
+        <div class="bc-f"><label>হিজরি তারিখ সংশোধন</label><select id="bcHj"><option value="-2">−২ দিন</option><option value="-1">−১ দিন</option><option value="0" selected>০ (সৌদি/উম্মুল কুরা)</option><option value="1">+১ দিন</option><option value="2">+২ দিন</option></select></div>
+      </div>
+      <div class="bc-grid" id="bcGdOut"></div>
+      <h4 class="bc-h">🔁 বাংলা সন → ইংরেজি তারিখ</h4>
+      <div class="bc-row">
+        <div class="bc-f"><label>বাংলা সন</label><input id="bcBy" inputmode="numeric"></div>
+        <div class="bc-f"><label>মাস</label><select id="bcBm"><option value="0">বৈশাখ</option><option value="1">জ্যৈষ্ঠ</option><option value="2">আষাঢ়</option><option value="3">শ্রাবণ</option><option value="4">ভাদ্র</option><option value="5">আশ্বিন</option><option value="6">কার্তিক</option><option value="7">অগ্রহায়ণ</option><option value="8">পৌষ</option><option value="9">মাঘ</option><option value="10">ফাল্গুন</option><option value="11">চৈত্র</option></select></div>
+        <div class="bc-f"><label>তারিখ</label><input id="bcBd" inputmode="numeric" value="1"></div>
+      </div>
+      <div class="bc-grid" id="bcBdOut"></div>
+      <div class="bc-note">বাংলা সন বাংলাদেশের সংশোধিত পঞ্জিকা অনুযায়ী (১ বৈশাখ = ১৪ এপ্রিল; প্রথম ৫ মাস ৩১ দিন, বাকিগুলো ৩০ দিন, অধিবর্ষে ফাল্গুন ৩১ দিন)। হিজরি তারিখ ব্রাউজারের উম্মুল কুরা ক্যালেন্ডার থেকে আসে; বাংলাদেশে চাঁদ দেখার ওপর নির্ভর করে ১–২ দিনের ব্যবধান হতে পারে, তাই সংশোধন ঘর দিয়ে মিলিয়ে নিন।</div>
+    </div>
+
+    <div class="bc-pane" id="bc-age">
+      <div class="bc-row">
+        <div class="bc-f"><label>জন্মতারিখ</label><input type="date" id="bcDob"></div>
+        <div class="bc-f"><label>যে তারিখে বয়স জানতে চান</label><input type="date" id="bcAsof"></div>
+        <div class="bc-f" style="flex:0 0 auto;align-self:flex-end"><button type="button" class="bc-mini-btn" style="padding:11px 16px;border:0;border-radius:12px;background:#eef0ff;color:var(--p1);font:inherit;font-weight:700;cursor:pointer" onclick="bcToday('bcAsof')">আজ</button></div>
+      </div>
+      <div class="bc-grid" id="bcAgeOut"></div>
+      <div class="bc-note">চাকরির আবেদনের বয়সসীমা দেখতে "যে তারিখে বয়স" ঘরে বিজ্ঞপ্তিতে দেওয়া নির্ধারিত তারিখ বসান। বয়সসীমা গণনার নিয়ম বিজ্ঞপ্তিভেদে আলাদা হতে পারে, তাই বিজ্ঞপ্তি পড়ে নিশ্চিত হোন।</div>
+    </div>
+
+    <div class="bc-pane" id="bc-int">
+      <div class="bc-mini" id="bcIntTabs">
+        <button type="button" class="on" onclick="bcIntTab('emi')">ঋণের কিস্তি (EMI)</button>
+        <button type="button" onclick="bcIntTab('fdr')">FDR</button>
+        <button type="button" onclick="bcIntTab('dps')">DPS</button>
+      </div>
+      <div class="bc-sub on" id="bci-emi">
+        <div class="bc-row">
+          <div class="bc-f"><label>ঋণের পরিমাণ (৳)</label><input id="bcEa" inputmode="decimal" value="500000"></div>
+          <div class="bc-f"><label>বার্ষিক সুদের হার (%)</label><input id="bcEr" inputmode="decimal" value="12"></div>
+          <div class="bc-f"><label>মেয়াদ (মাস)</label><input id="bcEn" inputmode="numeric" value="36"></div>
+          <div class="bc-f"><label>সুদ হিসাবের পদ্ধতি</label><select id="bcEm"><option value="red">ক্রমহ্রাসমান স্থিতি (Reducing)</option><option value="flat">ফ্ল্যাট রেট (Flat)</option></select></div>
+        </div>
+        <div class="bc-grid" id="bcEmiOut"></div>
+      </div>
+      <div class="bc-sub" id="bci-fdr">
+        <div class="bc-row">
+          <div class="bc-f"><label>জমার পরিমাণ (৳)</label><input id="bcFp" inputmode="decimal" value="100000"></div>
+          <div class="bc-f"><label>বার্ষিক সুদের হার (%)</label><input id="bcFr" inputmode="decimal" value="8"></div>
+          <div class="bc-f"><label>মেয়াদ (মাস)</label><input id="bcFn" inputmode="numeric" value="12"></div>
+          <div class="bc-f"><label>সুদ যোগ হওয়ার ধরন</label><select id="bcFc"><option value="4" selected>ত্রৈমাসিক চক্রবৃদ্ধি</option><option value="12">মাসিক চক্রবৃদ্ধি</option><option value="2">ষাণ্মাসিক চক্রবৃদ্ধি</option><option value="1">বার্ষিক চক্রবৃদ্ধি</option><option value="0">সরল সুদ</option></select></div>
+          <div class="bc-f"><label>উৎসে কর কর্তন % (ঐচ্ছিক)</label><input id="bcFt" inputmode="decimal" value="0"></div>
+        </div>
+        <div class="bc-grid" id="bcFdrOut"></div>
+      </div>
+      <div class="bc-sub" id="bci-dps">
+        <div class="bc-row">
+          <div class="bc-f"><label>মাসিক কিস্তি (৳)</label><input id="bcDd" inputmode="decimal" value="1000"></div>
+          <div class="bc-f"><label>বার্ষিক সুদের হার (%)</label><input id="bcDr" inputmode="decimal" value="8"></div>
+          <div class="bc-f"><label>মেয়াদ (মাস)</label><input id="bcDn" inputmode="numeric" value="60"></div>
+          <div class="bc-f"><label>উৎসে কর কর্তন % (ঐচ্ছিক)</label><input id="bcDt" inputmode="decimal" value="0"></div>
+        </div>
+        <div class="bc-grid" id="bcDpsOut"></div>
+      </div>
+      <div class="bc-note">এগুলো আনুমানিক হিসাব। ব্যাংক বা প্রতিষ্ঠানভেদে সুদ গণনার পদ্ধতি, কর ও চার্জ আলাদা হতে পারে (DPS-এ ত্রৈমাসিক চক্রবৃদ্ধি ধরা হয়েছে)। চূড়ান্ত অঙ্কের জন্য ব্যাংকের হিসাব দেখুন। উৎসে কর ঘরটি ডিফল্টে ০; প্রযোজ্য হার ব্যাংক জানাবে, সেটি নিজে বসাতে পারেন।</div>
+    </div>
+  </div>
+
   <div id="section-imgsz" class="container">
     <h2 class="section-title">🗜️ ছবির MB কমানো / বাড়ানো</h2>
     <p class="subtitle">ছবি আপলোড করুন, কত KB/MB চান লিখুন — ছবির সাইজ ঠিক সেই মাপে কমে বা বাড়বে। একসাথে একাধিক ছবি করা যায়।</p>
@@ -752,7 +1085,7 @@ function returnToPreviousPage(){
 function initSectionPageFromHash(){
   const raw=decodeURIComponent((window.location.hash||'').replace(/^#/,''));
   const id=raw==='photo5'?'photo5':(raw.startsWith('section=')?raw.slice(8):'');
-  const valid=['pdf2img','img2pdf','nid','fix','photo5','imgsz','links','ocr'];
+  const valid=['pdf2img','img2pdf','nid','fix','photo5','imgsz','links','ocr','bdcalc'];
   if(!valid.includes(id)){
     document.body.classList.remove('section-page-mode');
     switchSection('home');window.scrollTo(0,0);return;
@@ -1753,6 +2086,558 @@ async function ocrSendTelegram(){
     alert('টেলিগ্রামে সফলভাবে পাঠানো হয়েছে!');
   }catch(err){alert('ত্রুটি: '+err.message)}
 }
+
+/* ===== বাংলাদেশ ক্যালকুলেটর ===== */
+const BC_DIG='০১২৩৪৫৬৭৮৯';
+const bcEl=id=>document.getElementById(id);
+const bcBnD=t=>String(t).replace(/[0-9]/g,d=>BC_DIG[d]);
+const bcEnD=t=>String(t).replace(/[০-৯]/g,d=>BC_DIG.indexOf(d));
+const bcOut=t=>bcEl('bcBn').checked?bcBnD(t):String(t);
+function bcNum(v){const t=bcEnD(v).replace(/[,\s]/g,'');const n=parseFloat(t);return isFinite(n)?n:NaN}
+function bcFmt(n,dec){return isFinite(n)?bcOut(n.toLocaleString('en-IN',{maximumFractionDigits:dec===undefined?2:dec})):'—'}
+function bcMoney(n){return isFinite(n)?bcOut(n.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2}))+' ৳':'—'}
+const bcWarn=t=>'<div class="bc-note" style="grid-column:1/-1;margin:0">'+t+'</div>';
+const bcCard=(l,v,big)=>'<div class="bc-card'+(big?' big':'')+'"><small>'+l+'</small><b>'+v+'</b></div>';
+function bcTab(id){
+  ['land','dolil','taka','date','age','int'].forEach((k,i)=>{
+    bcEl('bc-'+k).classList.toggle('on',k===id);
+    bcEl('bcTabs').children[i].classList.toggle('on',k===id);
+  });
+}
+function bcIntTab(id){
+  ['emi','fdr','dps'].forEach((k,i)=>{
+    bcEl('bci-'+k).classList.toggle('on',k===id);
+    bcEl('bcIntTabs').children[i].classList.toggle('on',k===id);
+  });
+}
+function bcCopy(id){
+  const t=bcEl(id).textContent;
+  (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>alert('কপি করা হয়েছে!')).catch(()=>prompt('কপি করুন:',t));
+}
+function bcToday(id){
+  const d=new Date();
+  bcEl(id).value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  bcAll();
+}
+/* জমি */
+function bcLand(){
+  const v=bcNum(bcEl('bcLandV').value);let K=bcNum(bcEl('bcKatha').value);if(!(K>0))K=720;
+  const from=bcEl('bcLandU').value,out=bcEl('bcLandOut');
+  const f={sqft:1,sqyd:9,sqm:10.7639104167,sqhat:2.25,chhatak:K/16,katha:K,bigha:K*20,shotok:435.6,acre:43560,hectare:107639.104167};
+  const nm={sqft:'বর্গফুট',sqyd:'বর্গগজ',sqm:'বর্গমিটার',sqhat:'বর্গহাত',chhatak:'ছটাক',katha:'কাঠা',bigha:'বিঘা',shotok:'শতক',acre:'একর',hectare:'হেক্টর'};
+  if(!(v>=0)){out.innerHTML=bcWarn('সঠিক সংখ্যা লিখুন');return}
+  const sq=v*f[from];
+  out.innerHTML=Object.keys(f).map(k=>'<div class="bc-cell'+(k===from?' me':'')+'"><small>'+nm[k]+'</small><b>'+bcFmt(sq/f[k],6)+'</b></div>').join('');
+}
+/* টাকা কথায় */
+const BC_W=['শূন্য','এক','দুই','তিন','চার','পাঁচ','ছয়','সাত','আট','নয়','দশ','এগারো','বারো','তেরো','চৌদ্দ','পনেরো','ষোলো','সতেরো','আঠারো','ঊনিশ','বিশ','একুশ','বাইশ','তেইশ','চব্বিশ','পঁচিশ','ছাব্বিশ','সাতাশ','আটাশ','ঊনত্রিশ','ত্রিশ','একত্রিশ','বত্রিশ','তেত্রিশ','চৌত্রিশ','পঁয়ত্রিশ','ছত্রিশ','সাঁইত্রিশ','আটত্রিশ','ঊনচল্লিশ','চল্লিশ','একচল্লিশ','বিয়াল্লিশ','তেতাল্লিশ','চুয়াল্লিশ','পঁয়তাল্লিশ','ছেচল্লিশ','সাতচল্লিশ','আটচল্লিশ','ঊনপঞ্চাশ','পঞ্চাশ','একান্ন','বাহান্ন','তিপ্পান্ন','চুয়ান্ন','পঞ্চান্ন','ছাপ্পান্ন','সাতান্ন','আটান্ন','ঊনষাট','ষাট','একষট্টি','বাষট্টি','তেষট্টি','চৌষট্টি','পঁয়ষট্টি','ছেষট্টি','সাতষট্টি','আটষট্টি','ঊনসত্তর','সত্তর','একাত্তর','বাহাত্তর','তিয়াত্তর','চুয়াত্তর','পঁচাত্তর','ছিয়াত্তর','সাতাত্তর','আটাত্তর','ঊনআশি','আশি','একাশি','বিরাশি','তিরাশি','চুরাশি','পঁচাশি','ছিয়াশি','সাতাশি','আটাশি','ঊননব্বই','নব্বই','একানব্বই','বিরানব্বই','তিরানব্বই','চুরানব্বই','পঁচানব্বই','ছিয়ানব্বই','সাতানব্বই','আটানব্বই','নিরানব্বই'];
+function bcWordsBn(n){
+  if(n===0n)return BC_W[0];
+  const p=[];
+  const cr=n/10000000n;let r=n%10000000n;
+  if(cr>0n)p.push(bcWordsBn(cr)+' কোটি');
+  const lk=r/100000n;r=r%100000n;if(lk>0n)p.push(BC_W[Number(lk)]+' লক্ষ');
+  const th=r/1000n;r=r%1000n;if(th>0n)p.push(BC_W[Number(th)]+' হাজার');
+  const hu=r/100n;r=r%100n;if(hu>0n)p.push(BC_W[Number(hu)]+' শত');
+  if(r>0n)p.push(BC_W[Number(r)]);
+  return p.join(' ');
+}
+const BC_E1=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+const BC_E10=['','','Twenty','Thirty','Forty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+function bcE2(n){return n<20?BC_E1[n]:BC_E10[Math.floor(n/10)]+(n%10?' '+BC_E1[n%10]:'')}
+function bcWordsEn(n){
+  if(n===0n)return 'Zero';
+  const p=[];
+  const cr=n/10000000n;let r=n%10000000n;
+  if(cr>0n)p.push(bcWordsEn(cr)+' Crore');
+  const lk=r/100000n;r=r%100000n;if(lk>0n)p.push(bcE2(Number(lk))+' Lakh');
+  const th=r/1000n;r=r%1000n;if(th>0n)p.push(bcE2(Number(th))+' Thousand');
+  const hu=r/100n;r=r%100n;if(hu>0n)p.push(BC_E1[Number(hu)]+' Hundred');
+  if(r>0n)p.push(bcE2(Number(r)));
+  return p.join(' ');
+}
+function bcTaka(){
+  const bn=bcEl('bcTkBn'),en=bcEl('bcTkEn');
+  const t=bcEnD(bcEl('bcTkIn').value).replace(/[,\s৳]/g,'');
+  if(!/^\d{1,18}(\.\d*)?$/.test(t)){bn.textContent=t?'সঠিক সংখ্যা লিখুন':'';en.textContent=t?'Enter a valid number':'';return}
+  const parts=t.split('.');let ip=BigInt(parts[0]);const fr=(parts[1]||'');
+  let ps=Math.round(parseInt((fr+'000').slice(0,3),10)/10);
+  if(ps>=100){ip+=1n;ps=0}
+  let b='',e='';
+  if(ip===0n&&ps===0){b='শূন্য টাকা মাত্র';e='Taka Zero Only'}
+  else{
+    if(ip>0n)b=bcWordsBn(ip)+' টাকা';
+    if(ps>0)b+=(ip>0n?' ও ':'')+BC_W[ps]+' পয়সা';
+    b+=' মাত্র';
+    e='Taka '+(ip>0n?bcWordsEn(ip):'');
+    if(ps>0)e+=(ip>0n?' and ':'')+bcE2(ps)+' Paisa';
+    e+=' Only';
+  }
+  bn.textContent=b;en.textContent=e;
+}
+/* সংখ্যা ও তারিখ */
+const BC_MON=['বৈশাখ','জ্যৈষ্ঠ','আষাঢ়','শ্রাবণ','ভাদ্র','আশ্বিন','কার্তিক','অগ্রহায়ণ','পৌষ','মাঘ','ফাল্গুন','চৈত্র'];
+const BC_WD=['রবিবার','সোমবার','মঙ্গলবার','বুধবার','বৃহস্পতিবার','শুক্রবার','শনিবার'];
+const BC_GM=['জানুয়ারি','ফেব্রুয়ারি','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
+const BC_HM=['মুহাররম','সফর','রবিউল আউয়াল','রবিউস সানি','জমাদিউল আউয়াল','জমাদিউস সানি','রজব',"শা'বান",'রমজান','শাওয়াল','জিলকদ','জিলহজ'];
+const bcLeap=y=>(y%4===0&&y%100!==0)||y%400===0;
+const bcBnLens=B=>[31,31,31,31,31,30,30,30,30,30,bcLeap(B+594)?31:30,30];
+function bcG2B(dt){
+  const G=dt.getUTCFullYear(),b1=Date.UTC(G,3,14);
+  let B,start;
+  if(dt.getTime()>=b1){B=G-593;start=b1}else{B=G-594;start=Date.UTC(G-1,3,14)}
+  let days=Math.round((dt.getTime()-start)/86400000);
+  const L=bcBnLens(B);let m=0;
+  while(m<11&&days>=L[m]){days-=L[m];m++}
+  return {y:B,m:m,d:days+1};
+}
+function bcB2G(B,m,d){
+  const L=bcBnLens(B);let off=d-1;
+  for(let i=0;i<m;i++)off+=L[i];
+  return new Date(Date.UTC(B+593,3,14)+off*86400000);
+}
+function bcHijri(dt,adj){
+  try{
+    const d=new Date(dt.getTime()+adj*86400000);
+    const p=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'numeric',year:'numeric',timeZone:'UTC'}).formatToParts(d);
+    const g=t=>{const x=p.find(q=>q.type===t);return x?parseInt(x.value,10):NaN};
+    const r={y:g('year'),m:g('month'),d:g('day')};
+    if(!(r.y>1300&&r.y<1700)||!(r.m>=1&&r.m<=12))return null;
+    return r;
+  }catch(e){return null}
+}
+const bcGreg=dt=>bcOut(dt.getUTCDate())+' '+BC_GM[dt.getUTCMonth()]+' '+bcOut(dt.getUTCFullYear());
+function bcDigits(){
+  const v=bcEl('bcDgIn').value;
+  bcEl('bcDgBn').textContent=bcBnD(bcEnD(v));
+  bcEl('bcDgEn').textContent=bcEnD(v);
+}
+function bcDate(){
+  const v=bcEl('bcGd').value,out=bcEl('bcGdOut');
+  if(!v){out.innerHTML=bcWarn('তারিখ বেছে নিন')}
+  else{
+    const a=v.split('-').map(Number),dt=new Date(Date.UTC(a[0],a[1]-1,a[2]));
+    const b=bcG2B(dt),h=bcHijri(dt,parseInt(bcEl('bcHj').value,10)||0);
+    out.innerHTML=
+      bcCard('ইংরেজি',bcGreg(dt))+
+      bcCard('বার',BC_WD[dt.getUTCDay()])+
+      bcCard('বাংলা সন',bcOut(b.d)+' '+BC_MON[b.m]+' '+bcOut(b.y)+' বঙ্গাব্দ',true)+
+      bcCard('হিজরি (আনুমানিক)',h?bcOut(h.d)+' '+BC_HM[h.m-1]+' '+bcOut(h.y)+' হিজরি':'এই ব্রাউজারে পাওয়া যাচ্ছে না');
+  }
+  const B=parseInt(bcEnD(bcEl('bcBy').value),10),m=parseInt(bcEl('bcBm').value,10),d=parseInt(bcEnD(bcEl('bcBd').value),10);
+  const o2=bcEl('bcBdOut');
+  if(!(B>=1)||!(B<=3000)||!(d>=1)){o2.innerHTML=bcWarn('সন ও তারিখ সঠিকভাবে লিখুন');return}
+  const L=bcBnLens(B)[m];
+  if(d>L){o2.innerHTML=bcWarn(BC_MON[m]+' মাস '+bcOut(B)+' সনে '+bcOut(L)+' দিনের');return}
+  const g=bcB2G(B,m,d);
+  o2.innerHTML=bcCard('ইংরেজি তারিখ',bcGreg(g),true)+bcCard('বার',BC_WD[g.getUTCDay()]);
+}
+/* বয়স */
+function bcAge(){
+  const out=bcEl('bcAgeOut'),a=bcEl('bcDob').value,b=bcEl('bcAsof').value;
+  if(!a||!b){out.innerHTML=bcWarn('জন্মতারিখ ও গণনার তারিখ দিন');return}
+  const x=a.split('-').map(Number),y=b.split('-').map(Number);
+  const from=Date.UTC(x[0],x[1]-1,x[2]),to=Date.UTC(y[0],y[1]-1,y[2]);
+  if(from>to){out.innerHTML=bcWarn('জন্মতারিখ গণনার তারিখের পরে হতে পারে না');return}
+  let yy=y[0]-x[0],mm=(y[1]-1)-(x[1]-1),dd=y[2]-x[2];
+  if(dd<0){mm--;dd+=new Date(Date.UTC(y[0],y[1]-1,0)).getUTCDate()}
+  if(mm<0){yy--;mm+=12}
+  const days=Math.round((to-from)/86400000);
+  let by=y[0],cand=Date.UTC(by,x[1]-1,x[2]);
+  if(cand<to){by++;cand=Date.UTC(by,x[1]-1,x[2])}
+  const nb=Math.round((cand-to)/86400000);
+  out.innerHTML=
+    bcCard('বয়স',bcOut(yy)+' বছর '+bcOut(mm)+' মাস '+bcOut(dd)+' দিন',true)+
+    bcCard('মোট মাস',bcFmt(yy*12+mm,0))+
+    bcCard('মোট দিন',bcFmt(days,0))+
+    bcCard('জন্মবার',BC_WD[new Date(from).getUTCDay()])+
+    bcCard('পরবর্তী জন্মদিন',nb===0?'আজই 🎂':bcOut(nb)+' দিন পর');
+}
+/* সুদ ও কিস্তি */
+function bcEmi(){
+  const P=bcNum(bcEl('bcEa').value),R=bcNum(bcEl('bcEr').value),N=parseInt(bcEnD(bcEl('bcEn').value),10),mt=bcEl('bcEm').value,out=bcEl('bcEmiOut');
+  if(!(P>0)||!(R>=0)||!(N>0)){out.innerHTML=bcWarn('ঋণ, সুদের হার ও মেয়াদ সঠিকভাবে লিখুন');return}
+  let emi,tot;
+  if(mt==='flat'){const I=P*R/100*(N/12);tot=P+I;emi=tot/N}
+  else{const r=R/1200;emi=r===0?P/N:P*r*Math.pow(1+r,N)/(Math.pow(1+r,N)-1);tot=emi*N}
+  out.innerHTML=bcCard('মাসিক কিস্তি',bcMoney(emi),true)+bcCard('মোট পরিশোধ',bcMoney(tot))+bcCard('মোট সুদ',bcMoney(tot-P));
+}
+function bcFdr(){
+  const P=bcNum(bcEl('bcFp').value),R=bcNum(bcEl('bcFr').value),N=parseInt(bcEnD(bcEl('bcFn').value),10),k=parseInt(bcEl('bcFc').value,10),T=bcNum(bcEl('bcFt').value)||0,out=bcEl('bcFdrOut');
+  if(!(P>0)||!(R>=0)||!(N>0)){out.innerHTML=bcWarn('জমা, সুদের হার ও মেয়াদ সঠিকভাবে লিখুন');return}
+  const t=N/12,M=k===0?P*(1+R/100*t):P*Math.pow(1+R/(100*k),k*t);
+  const I=M-P,tax=I*Math.max(0,T)/100;
+  out.innerHTML=bcCard('মেয়াদান্তে মোট (কর বাদে)',bcMoney(P+I-tax),true)+bcCard('মোট সুদ',bcMoney(I))+(tax>0?bcCard('উৎসে কর',bcMoney(tax)):'')+bcCard('আসল',bcMoney(P));
+}
+function bcDps(){
+  const D=bcNum(bcEl('bcDd').value),R=bcNum(bcEl('bcDr').value),N=parseInt(bcEnD(bcEl('bcDn').value),10),T=bcNum(bcEl('bcDt').value)||0,out=bcEl('bcDpsOut');
+  if(!(D>0)||!(R>=0)||!(N>0)){out.innerHTML=bcWarn('কিস্তি, সুদের হার ও মেয়াদ সঠিকভাবে লিখুন');return}
+  let M;
+  if(R===0)M=D*N;
+  else{const q=Math.pow(1+R/400,1/3);M=D*q*(Math.pow(q,N)-1)/(q-1)}
+  const dep=D*N,I=M-dep,tax=I*Math.max(0,T)/100;
+  out.innerHTML=bcCard('মেয়াদান্তে মোট (কর বাদে)',bcMoney(M-tax),true)+bcCard('মোট জমা',bcMoney(dep))+bcCard('মোট সুদ',bcMoney(I))+(tax>0?bcCard('উৎসে কর',bcMoney(tax)):'');
+}
+
+/* দলিলের হিসাব: বিঘা-কাঠা-ছটাক-গণ্ডা-কড়া-ক্রান্তি-তিল */
+function dlTab(id){
+  ['a','b','c','d','e','f','g','h'].forEach((k,i)=>{
+    bcEl('dl-'+k).classList.toggle('on',k===id);
+    bcEl('dlTabs').children[i].classList.toggle('on',k===id);
+  });
+  bcAll();
+}
+function dlCfg(){
+  const g=(id,d)=>{const n=bcNum(bcEl(id).value);return n>0?n:d};
+  const K=g('dlK',720),rb=g('dlRBigha',20),rk=g('dlRKatha',16),rc=g('dlRChh',5),rg=g('dlRGonda',4),ro=g('dlRKora',3),rr=g('dlRKr',20);
+  const tilPerKr=rr,tilPerKora=ro*tilPerKr,tilPerGonda=rg*tilPerKora,tilPerChh=rc*tilPerGonda,tilPerKatha=rk*tilPerChh,tilPerBigha=rb*tilPerKatha;
+  const sqftTil=K/tilPerKatha; /* ১ তিল = কত বর্গফুট */
+  return {K,tilPerKr,tilPerKora,tilPerGonda,tilPerChh,tilPerKatha,tilPerBigha,sqftTil};
+}
+/* বর্গফুট <-> তিল (শতভাগ পর্যন্ত নির্ভুল রাখতে পূর্ণসংখ্যা ব্যবহার) */
+function dlSqftToT100(sq,c){return Math.round(sq/c.sqftTil*100)}
+function dlT100ToSqft(t,c){return t/100*c.sqftTil}
+function dlNum(id){const n=bcNum(bcEl(id).value);return n>=0?n:0}
+function dlReadSet(prefix,c){ /* দলিলের ঘরগুলো থেকে মোট বর্গফুট */
+  const v=k=>dlNum(prefix+k);
+  const til=v('Bigha')*c.tilPerBigha+v('Katha')*c.tilPerKatha+v('Chhatak')*c.tilPerChh+v('Gonda')*c.tilPerGonda+v('Kora')*c.tilPerKora+v('Kranti')*c.tilPerKr+v('Til');
+  return til*c.sqftTil;
+}
+function dlTrim(n){return String(Math.round(n*100)/100)}
+function dlPartsBigha(t100,c){
+  let r=t100;const out=[];
+  [['বিঘা',c.tilPerBigha],['কাঠা',c.tilPerKatha],['ছটাক',c.tilPerChh],['গণ্ডা',c.tilPerGonda],['কড়া',c.tilPerKora],['ক্রান্তি',c.tilPerKr]].forEach(([n,u])=>{
+    const U=Math.round(u*100);const q=Math.floor(r/U+1e-9);r-=q*U;out.push([n,q]);
+  });
+  out.push(['তিল',r/100]);
+  return out;
+}
+function dlStr(parts){
+  const s=parts.filter(p=>p[1]>0).map(p=>bcOut(dlTrim(p[1]))+' '+p[0]);
+  return s.length?s.join(' '):bcOut('0')+' '+parts[0][0];
+}
+function dlAcreParts(sq){
+  const A100=Math.round(sq/4.356*100); /* অযুতাংশ x100 */
+  const u1=10000*100,u2=100*100;
+  const ac=Math.floor(A100/u1+1e-9);let r=A100-ac*u1;
+  const sh=Math.floor(r/u2+1e-9);r-=sh*u2;
+  return [['একর',ac],['শতাংশ',sh],['অযুতাংশ',r/100]];
+}
+function dlGrid(sq,c){
+  const f=[['বর্গফুট',1],['বর্গগজ',9],['বর্গমিটার',10.7639104167],['বর্গহাত',2.25],['শতক',435.6],['অযুতাংশ',4.356],['কাঠা',c.K],['বিঘা',c.K*20],['একর',43560],['হেক্টর',107639.104167]];
+  return f.map(x=>'<div class="bc-cell"><small>'+x[0]+'</small><b>'+bcFmt(sq/x[1],6)+'</b></div>').join('');
+}
+function dlFill(o1,o2,grid,sq,c){
+  const t100=dlSqftToT100(sq,c);
+  bcEl(o1).textContent=dlStr(dlPartsBigha(t100,c));
+  if(o2)bcEl(o2).textContent=dlStr(dlAcreParts(sq));
+  if(grid)bcEl(grid).innerHTML=dlGrid(sq,c);
+}
+function dlA(){
+  const c=dlCfg(),v=bcNum(bcEl('dlAV').value),from=bcEl('dlAU').value;
+  if(!(v>=0)){bcEl('dlAOut1').textContent='সঠিক সংখ্যা লিখুন';bcEl('dlAOut2').textContent='';bcEl('dlAGrid').innerHTML='';return}
+  const f={sqft:1,sqyd:9,sqm:10.7639104167,sqhat:2.25,shotok:435.6,ayut:4.356,acre:43560,hectare:107639.104167,
+    bigha:c.tilPerBigha*c.sqftTil,katha:c.K,chhatak:c.tilPerChh*c.sqftTil,gonda:c.tilPerGonda*c.sqftTil,kora:c.tilPerKora*c.sqftTil,kranti:c.tilPerKr*c.sqftTil,til:c.sqftTil};
+  dlFill('dlAOut1','dlAOut2','dlAGrid',v*f[from],c);
+}
+function dlB(){
+  const c=dlCfg();
+  let sq=dlReadSet('dlB',c);
+  sq+=dlNum('dlBAcre')*43560+dlNum('dlBShatak')*435.6+dlNum('dlBAyut')*4.356;
+  dlFill('dlBOut1','dlBOut2','dlBGrid',sq,c);
+}
+function dlC(){
+  const c=dlCfg(),op=(document.querySelector('input[name="dlOp"]:checked')||{}).value||'add';
+  bcEl('dlC2Wrap').style.display=op==='div'?'none':'';
+  bcEl('dlCNWrap').style.display=op==='div'?'':'none';
+  const a=dlReadSet('dlC1',c),b=dlReadSet('dlC2',c);
+  const lbl=bcEl('dlCLabel'),out=bcEl('dlCOut1');
+  let sq;
+  if(op==='add'){sq=a+b;lbl.textContent='যোগফল (দলিলের লেখা)'}
+  else if(op==='sub'){
+    if(b>a+1e-9){out.textContent='B বেশি হওয়ায় বিয়োগ সম্ভব নয় (A-এর চেয়ে B বড়)';lbl.textContent='ফলাফল';bcEl('dlCGrid').innerHTML='';return}
+    sq=a-b;lbl.textContent='অবশিষ্ট জমি (দলিলের লেখা)';
+  }else{
+    const n=bcNum(bcEl('dlCN').value);
+    if(!(n>0)){out.textContent='জনসংখ্যা লিখুন';bcEl('dlCGrid').innerHTML='';return}
+    sq=a/n;lbl.textContent='জনপ্রতি অংশ (দলিলের লেখা)';
+  }
+  dlFill('dlCOut1',null,'dlCGrid',sq,c);
+  out.textContent=out.textContent+'   ('+bcFmt(sq/435.6,4)+' শতক)';
+}
+
+/* আনা হিস্যা */
+const HS_TIL_ANNA=4800,HS_TIL_FULL=16*4800;
+let hsSeq=0;
+function hsAddRow(name){
+  hsSeq++;const n=hsSeq,box=bcEl('hsRows'),div=document.createElement('div');
+  div.className='hs-row';div.dataset.n=n;
+  const f=(k,l)=>'<div class="bc-f"><label>'+l+'</label><input data-k="'+k+'" inputmode="decimal" placeholder="০"></div>';
+  div.innerHTML='<div class="bc-f nm"><label>নাম</label><input data-k="name" placeholder="মালিক '+bcBnD(box.children.length+1)+'" value="'+(name||'')+'"></div>'+
+    f('anna','আনা')+f('gonda','গণ্ডা')+f('kora','কড়া')+f('kranti','ক্রান্তি')+f('til','তিল')+
+    '<button type="button" class="hs-del" title="বাদ দিন" onclick="hsDelRow(this)">✕</button>';
+  box.appendChild(div);
+}
+function hsDelRow(b){b.parentNode.remove();bcAll()}
+function hsTil(row){
+  const g=k=>{const n=bcNum(row.querySelector('[data-k="'+k+'"]').value);return n>0?n:0};
+  return g('anna')*HS_TIL_ANNA+g('gonda')*240+g('kora')*60+g('kranti')*20+g('til');
+}
+function hsAnnaStr(til){
+  /* তিল -> আনা গণ্ডা কড়া ক্রান্তি তিল */
+  let r=Math.round(til*100);const out=[];
+  [['আনা',HS_TIL_ANNA],['গণ্ডা',240],['কড়া',60],['ক্রান্তি',20]].forEach(([n,u])=>{const U=u*100,q=Math.floor(r/U+1e-9);r-=q*U;out.push([n,q])});
+  out.push(['তিল',r/100]);
+  return dlStr(out);
+}
+function hsLandSqft(c){
+  const v=bcNum(bcEl('hsLand').value);if(!(v>=0))return NaN;
+  const f={sqft:1,sqyd:9,sqm:10.7639104167,shotok:435.6,ayut:4.356,acre:43560,katha:c.K,bigha:c.K*20};
+  return v*f[bcEl('hsUnit').value];
+}
+let hsNote='';
+const HS_UNIT={anna:HS_TIL_ANNA,gonda:240,kora:60,kranti:20,til:1};
+function hsClamp(e){
+  /* মোট হিস্যা ১৬ আনার বেশি হতে দেওয়া হয় না */
+  hsNote='';
+  const inp=e.target,k=inp&&inp.dataset&&inp.dataset.k;
+  if(!k||k==='name')return;
+  const box=bcEl('hsRows');let total=0;
+  [...box.children].forEach(r=>total+=hsTil(r));
+  const excess=Math.round((total-HS_TIL_FULL)*100)/100;
+  if(excess>0){
+    const cur=bcNum(inp.value)||0,u=HS_UNIT[k];
+    let nv=Math.floor((cur-excess/u)*100+1e-9)/100;if(nv<0)nv=0;
+    inp.value=nv>0?String(nv):'';
+    hsNote='⛔ মোট হিস্যা ১৬ আনার বেশি হতে পারে না, তাই এই ঘরের সংখ্যা সর্বোচ্চ সীমায় কমিয়ে দেওয়া হয়েছে।';
+  }
+}
+function dlD(){
+  const box=bcEl('hsRows');if(!box)return;
+  if(!box.dataset.bound){box.dataset.bound='1';box.addEventListener('input',hsClamp)}
+  if(!box.children.length){hsAddRow();hsAddRow()}
+  const c=dlCfg(),sq=hsLandSqft(c),hasLand=isFinite(sq)&&sq>0;
+  const landTxt=(s)=>bcFmt(s/435.6,4)+' শতক';
+  let total=0,html='';
+  [...box.children].forEach((row,i)=>{
+    const til=hsTil(row),frac=til/HS_TIL_FULL;total+=til;
+    const nm=(row.querySelector('[data-k="name"]').value||'').trim()||('মালিক '+bcBnD(i+1));
+    const safe=nm.replace(/</g,'&lt;');
+    let b='<div class="bc-card"><small>'+safe+'</small><b>'+bcFmt(frac*100,4)+'%</b>'+
+      '<div style="font-size:13px;color:var(--mute);margin-top:4px">'+(til>0?hsAnnaStr(til):'—')+' হিস্যা</div>';
+    if(hasLand&&til>0){const s=sq*frac;b+='<div style="font-size:15px;margin-top:6px;font-weight:700;color:var(--p1)">'+landTxt(s)+'</div><div style="font-size:12.5px;color:var(--ink);margin-top:2px">'+dlStr(dlPartsBigha(dlSqftToT100(s,c),c))+'</div>'}
+    html+=b+'</div>';
+  });
+  bcEl('hsOut').innerHTML='<div class="bc-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-bottom:12px">'+html+'</div>';
+  const ratio=total/HS_TIL_FULL,rem=HS_TIL_FULL-total;
+  let msg='মোট হিস্যা: <b>'+hsAnnaStr(total)+'</b> ('+bcFmt(ratio*100,4)+'%)';
+  if(Math.abs(rem)<0.005)msg+=' ✅ ঠিক ১৬ আনা মিলেছে';
+  else if(rem>0)msg+='<br>⚠️ ১৬ আনা পূর্ণ হতে বাকি: <b>'+hsAnnaStr(rem)+'</b>';
+  if(hsNote)msg+='<br>'+hsNote;
+  bcEl('hsSum').innerHTML=msg;
+  let tb='';
+  for(let a=1;a<=16;a++){
+    const fr=a/16;
+    tb+='<tr><td><b>'+bcBnD(a)+' আনা</b></td><td>'+bcBnD(a)+'/'+bcBnD(16)+'</td><td>'+bcFmt(fr*100,4)+'%</td>'+
+      '<td>'+(hasLand?bcFmt(sq*fr/435.6,4):'—')+'</td><td>'+(hasLand?dlStr(dlPartsBigha(dlSqftToT100(sq*fr,c),c)):'—')+'</td></tr>';
+  }
+  bcEl('hsTbl').innerHTML=tb;
+}
+
+/* ১০০০ হিস্যা */
+const PT_TOTAL=1000;let ptSeq=0,ptNote='';
+function ptAddRow(){
+  ptSeq++;const box=bcEl('ptRows'),div=document.createElement('div');
+  div.className='hs-row';
+  div.innerHTML='<div class="bc-f nm"><label>নাম</label><input data-k="name" placeholder="মালিক '+bcBnD(box.children.length+1)+'"></div>'+
+    '<div class="bc-f" style="flex:0 1 120px"><label>হিস্যা (১০০০ এর মধ্যে)</label><input data-k="h" inputmode="decimal" placeholder="০"></div>'+
+    '<button type="button" class="hs-del" title="বাদ দিন" onclick="this.parentNode.remove();bcAll()">✕</button>';
+  box.appendChild(div);
+}
+function ptVal(row){const n=bcNum(row.querySelector('[data-k="h"]').value);return n>0?n:0}
+function ptClamp(e){
+  ptNote='';const inp=e.target;if(!inp||!inp.dataset||inp.dataset.k!=='h')return;
+  let total=0;[...bcEl('ptRows').children].forEach(r=>total+=ptVal(r));
+  const ex=Math.round((total-PT_TOTAL)*1000)/1000;
+  if(ex>0){
+    let nv=Math.floor(((bcNum(inp.value)||0)-ex)*1000+1e-9)/1000;if(nv<0)nv=0;
+    inp.value=nv>0?String(nv):'';
+    ptNote='⛔ মোট হিস্যা ১০০০-এর বেশি হতে পারে না, তাই এই ঘরের সংখ্যা সর্বোচ্চ সীমায় কমিয়ে দেওয়া হয়েছে।';
+  }
+}
+function dlE(){
+  const box=bcEl('ptRows');if(!box)return;
+  if(!box.dataset.bound){box.dataset.bound='1';box.addEventListener('input',ptClamp)}
+  if(!box.children.length){ptAddRow();ptAddRow()}
+  const c=dlCfg(),v=bcNum(bcEl('ptLand').value);
+  const f={sqft:1,sqyd:9,sqm:10.7639104167,shotok:435.6,ayut:4.356,acre:43560,katha:c.K,bigha:c.K*20};
+  const sq=v>=0?v*f[bcEl('ptUnit').value]:NaN,hasLand=isFinite(sq)&&sq>0;
+  let total=0,html='';
+  [...box.children].forEach((row,i)=>{
+    const h=ptVal(row);total+=h;
+    const nm=((row.querySelector('[data-k="name"]').value||'').trim()||('মালিক '+bcBnD(i+1))).replace(/</g,'&lt;');
+    let b='<div class="bc-card"><small>'+nm+'</small><b>'+(hasLand?bcFmt(sq*h/PT_TOTAL/435.6,4)+' শতক':bcFmt(h/PT_TOTAL*100,4)+'%')+'</b>'+
+      '<div style="font-size:13px;color:var(--mute);margin-top:4px">হিস্যা '+bcFmt(h,3)+' / ১০০০ = '+bcFmt(h/PT_TOTAL*100,4)+'%</div>';
+    if(hasLand&&h>0)b+='<div style="font-size:12.5px;color:var(--ink);margin-top:4px">'+dlStr(dlPartsBigha(dlSqftToT100(sq*h/PT_TOTAL,c),c))+'</div>';
+    html+=b+'</div>';
+  });
+  bcEl('ptOut').innerHTML='<div class="bc-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr));margin-bottom:12px">'+html+'</div>';
+  const rem=Math.round((PT_TOTAL-total)*1000)/1000;
+  let msg='মোট হিস্যা: <b>'+bcFmt(total,3)+' / ১০০০</b> ('+bcFmt(total/PT_TOTAL*100,4)+'%)';
+  if(rem===0)msg+=' ✅ ঠিক ১০০০ মিলেছে';else msg+='<br>⚠️ ১০০০ পূর্ণ হতে বাকি: <b>'+bcFmt(rem,3)+'</b>'+(hasLand?' ('+bcFmt(sq*rem/PT_TOTAL/435.6,4)+' শতক)':'');
+  if(ptNote)msg+='<br>'+ptNote;
+  bcEl('ptSum').innerHTML=msg;
+}
+
+/* জমি -> হিস্যা */
+let rvNote='';
+function rvAddRow(){
+  const box=bcEl('rvRows'),div=document.createElement('div');div.className='hs-row';
+  div.innerHTML='<div class="bc-f nm"><label>নাম</label><input data-k="name" placeholder="মালিক '+bcBnD(box.children.length+1)+'"></div>'+
+    '<div class="bc-f" style="flex:0 1 130px"><label>জমির পরিমাণ</label><input data-k="a" inputmode="decimal" placeholder="০"></div>'+
+    '<button type="button" class="hs-del" title="বাদ দিন" onclick="this.parentNode.remove();bcAll()">✕</button>';
+  box.appendChild(div);
+}
+function rvVal(row){const n=bcNum(row.querySelector('[data-k="a"]').value);return n>0?n:0}
+function rvClamp(e){
+  rvNote='';const inp=e.target;if(!inp||!inp.dataset||inp.dataset.k!=='a')return;
+  const T=bcNum(bcEl('rvLand').value);if(!(T>0))return;
+  let total=0;[...bcEl('rvRows').children].forEach(r=>total+=rvVal(r));
+  const ex=Math.round((total-T)*10000)/10000;
+  if(ex>0){
+    let nv=Math.floor(((bcNum(inp.value)||0)-ex)*10000+1e-9)/10000;if(nv<0)nv=0;
+    inp.value=nv>0?String(nv):'';
+    rvNote='⛔ সবার জমির যোগফল মোট জমির বেশি হতে পারে না, তাই এই ঘরের সংখ্যা সর্বোচ্চ সীমায় কমিয়ে দেওয়া হয়েছে।';
+  }
+}
+function dlF(){
+  const box=bcEl('rvRows');if(!box)return;
+  if(!box.dataset.bound){box.dataset.bound='1';box.addEventListener('input',rvClamp);bcEl('rvLand').addEventListener('input',()=>{rvNote=''})}
+  if(!box.children.length){rvAddRow();rvAddRow()}
+  const T=bcNum(bcEl('rvLand').value);
+  const uName=bcEl('rvUnit').selectedOptions[0].textContent.split(' /')[0];
+  if(!(T>0)){bcEl('rvOut').innerHTML='';bcEl('rvSum').innerHTML='মোট জমির সঠিক পরিমাণ লিখুন';return}
+  let total=0,html='';
+  [...box.children].forEach((row,i)=>{
+    const a=rvVal(row);total+=a;const fr=a/T;
+    const nm=((row.querySelector('[data-k="name"]').value||'').trim()||('মালিক '+bcBnD(i+1))).replace(/</g,'&lt;');
+    html+='<div class="bc-card"><small>'+nm+' — '+bcFmt(a,4)+' '+uName+'</small><b>'+bcFmt(fr*1000,4)+' / ১০০০</b>'+
+      '<div style="font-size:13px;color:var(--mute);margin-top:4px">শতকরা '+bcFmt(fr*100,4)+'%</div>'+
+      '<div style="font-size:13px;color:var(--p1);font-weight:700;margin-top:4px">'+(a>0?hsAnnaStr(fr*HS_TIL_FULL):'—')+' হিস্যা</div></div>';
+  });
+  bcEl('rvOut').innerHTML='<div class="bc-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-bottom:12px">'+html+'</div>';
+  const rem=Math.round((T-total)*10000)/10000;
+  let msg='মোট বন্টিত: <b>'+bcFmt(total,4)+' '+uName+'</b> ('+bcFmt(total/T*1000,4)+' / ১০০০ হিস্যা)';
+  if(rem===0)msg+=' ✅ পুরো জমি বন্টন হয়েছে';else msg+='<br>⚠️ অবন্টিত জমি বাকি: <b>'+bcFmt(rem,4)+' '+uName+'</b> ('+bcFmt(rem/T*1000,4)+' / ১০০০ হিস্যা)';
+  if(rvNote)msg+='<br>'+rvNote;
+  bcEl('rvSum').innerHTML=msg;
+}
+
+/* রেজিস্ট্রেশন খরচ */
+function dlSqftFrom(vId,uId,c){
+  const v=bcNum(bcEl(vId).value);if(!(v>=0))return NaN;
+  const f={sqft:1,sqyd:9,sqm:10.7639104167,shotok:435.6,ayut:4.356,acre:43560,katha:c.K,bigha:c.K*20};
+  return v*f[bcEl(uId).value];
+}
+function dlG(){
+  const sel=bcEl('rgAreaSel');if(!sel)return;
+  if(!sel.dataset.bound){sel.dataset.bound='1';sel.addEventListener('change',()=>{if(sel.value!=='x')bcEl('rgTds').value=sel.value})}
+  const c=dlCfg(),num=id=>{const n=bcNum(bcEl(id).value);return n>=0?n:0};
+  const land=num('rgLand'),direct=bcNum(bcEl('rgTotal').value);
+  const value=direct>0?direct:land*num('rgPrice');
+  const out=bcEl('rgTotalOut'),tb=bcEl('rgTbl');
+  if(!(value>0)){out.textContent='জমির দাম বা মোট দলিল মূল্য লিখুন';bcEl('rgTotalWords').textContent='';tb.innerHTML='';return}
+  const rows=[['দলিল মূল্য','—',value,true]];
+  const pct=(n,id)=>{const r=num(id);return [n,bcFmt(r,3)+'%',Math.round(value*r/100)]};
+  rows.push(pct('স্ট্যাম্প শুল্ক','rgStamp'),pct('রেজিস্ট্রেশন ফি','rgReg'),pct('স্থানীয় সরকার কর','rgLg'),pct('ভ্যাট','rgVat'));
+  const tr=num('rgTds'),katha=land*435.6/c.K,mn=num('rgTdsMin')*katha,tds=Math.round(Math.max(value*tr/100,mn));
+  rows.push(['উৎসে কর (গেইন ট্যাক্স)',bcFmt(tr,3)+'%'+(mn>value*tr/100?' (ন্যূনতম কাঠা-হার প্রযোজ্য)':''),tds]);
+  const oth=Math.round(num('rgOther'));if(oth>0)rows.push(['অন্যান্য নির্দিষ্ট খরচ','নির্দিষ্ট',oth]);
+  let total=0;rows.slice(1).forEach(r=>total+=r[2]);
+  let h='';
+  rows.forEach((r,i)=>{h+='<tr'+(i===0?' style="background:#f7f8fe"':'')+'><td style="text-align:left">'+r[0]+'</td><td>'+r[1]+'</td><td>'+bcMoney(r[2])+'</td></tr>'});
+  h+='<tr style="background:#eef0ff;font-weight:800"><td style="text-align:left">মোট খরচ</td><td>'+bcFmt(total/value*100,2)+'%</td><td>'+bcMoney(total)+'</td></tr>';
+  if(land>0)h+='<tr><td style="text-align:left">প্রতি শতকে খরচ</td><td>—</td><td>'+bcMoney(total/land)+'</td></tr>';
+  tb.innerHTML=h;
+  out.textContent=bcMoney(total)+'  (দলিল মূল্যের '+bcFmt(total/value*100,2)+'%)';
+  bcEl('rgTotalWords').textContent=bcWordsBn(BigInt(Math.round(total)))+' টাকা মাত্র';
+}
+
+/* ওয়ারিশ হিস্যা (হানাফি ফারায়েজ, সাধারণ ক্ষেত্র) */
+function wsGcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b]}return a||1}
+function wsF(n,d){if(d===undefined)d=1;if(d<0){n=-n;d=-d}if(n===0)return{n:0,d:1};const g=wsGcd(n,d);return{n:n/g,d:d/g}}
+const wsAdd=(a,b)=>wsF(a.n*b.d+b.n*a.d,a.d*b.d),wsSub=(a,b)=>wsF(a.n*b.d-b.n*a.d,a.d*b.d),wsMul=(a,b)=>wsF(a.n*b.n,a.d*b.d),wsDiv=(a,b)=>wsF(a.n*b.d,a.d*b.n);
+const wsVal=f=>f.n/f.d;
+const wsTxt=f=>f.n===0?'০':(f.d===1?'১ (সম্পূর্ণ)':bcBnD(f.n)+'/'+bcBnD(f.d));
+function wsCalc(g,sp,sons,dau,fa,mo){
+  const Z=wsF(0),ONE=wsF(1),child=sons+dau>0;
+  const S={sp:Z,mo:Z,fa:Z,da:Z,so:Z};let notes=[];
+  if(sp>0)S.sp=g==='m'?(child?wsF(1,8):wsF(1,4)):(child?wsF(1,4):wsF(1,2));
+  if(mo){
+    if(child)S.mo=wsF(1,6);
+    else if(fa&&sp>0){S.mo=wsDiv(wsSub(ONE,S.sp),wsF(3));notes.push('স্বামী/স্ত্রী ও পিতা-মাতা থাকলে মা স্বামী/স্ত্রীর অংশ বাদে অবশিষ্টের ১/৩ পান।')}
+    else S.mo=wsF(1,3);
+  }
+  if(fa&&sons>0)S.fa=wsF(1,6);
+  else if(fa&&dau>0)S.fa=wsF(1,6);
+  if(sons===0&&dau>0)S.da=dau===1?wsF(1,2):wsF(2,3);
+  let fixed=wsAdd(wsAdd(S.sp,S.mo),wsAdd(S.fa,S.da));
+  let rem=wsSub(ONE,fixed),unresolved=false;
+  if(rem.n<0){
+    const k=wsDiv(ONE,fixed);['sp','mo','fa','da'].forEach(x=>S[x]=wsMul(S[x],k));
+    rem=Z;notes.push('অংশের যোগফল ১-এর বেশি হওয়ায় সবার অংশ আনুপাতিক হারে কমানো হয়েছে (আউল)।');
+  }else if(rem.n>0){
+    if(sons>0){const u=wsDiv(rem,wsF(2*sons+dau));S.so=wsMul(u,wsF(2*sons));S.da=wsAdd(S.da,wsMul(u,wsF(dau)))}
+    else if(fa){S.fa=wsAdd(S.fa,rem)}
+    else{
+      const base=wsAdd(S.mo,S.da);
+      if(base.n>0){const k=wsDiv(rem,base);S.mo=wsAdd(S.mo,wsMul(S.mo,k));S.da=wsAdd(S.da,wsMul(S.da,k));notes.push('অবশিষ্ট অংশ স্বামী/স্ত্রী বাদে অন্য ওয়ারিশদের মধ্যে আনুপাতিক হারে ফেরত গেছে (রদ)।')}
+      else unresolved=true;
+    }
+  }
+  return {S,notes,unresolved,rem};
+}
+function dlH(){
+  const g=bcEl('wsG');if(!g)return;
+  const male=g.value==='m';
+  bcEl('wsSpL').textContent=male?'স্ত্রীর সংখ্যা (০–৪)':'স্বামী (০ বা ১)';
+  const gi=id=>{const n=Math.floor(bcNum(bcEl(id).value));return n>0?n:0};
+  const sp=Math.min(gi('wsSp'),male?4:1),sons=gi('wsSon'),dau=gi('wsDau'),fa=bcEl('wsFa').checked,mo=bcEl('wsMo').checked;
+  const c=dlCfg(),sq=dlSqftFrom('wsLand','wsUnit',c),hasLand=isFinite(sq)&&sq>0;
+  const out=bcEl('wsOut'),warn=bcEl('wsWarn'),sum=bcEl('wsSum');
+  warn.innerHTML='';
+  if(sp+sons+dau+(fa?1:0)+(mo?1:0)===0){out.innerHTML='';sum.innerHTML='কমপক্ষে একজন ওয়ারিশ বসান';return}
+  const r=wsCalc(g.value,sp,sons,dau,fa,mo),S=r.S;
+  const groups=[[male?'স্ত্রী':'স্বামী',sp,S.sp],['ছেলে',sons,S.so],['মেয়ে',dau,S.da],['পিতা',fa?1:0,S.fa],['মাতা',mo?1:0,S.mo]];
+  let html='',tot=wsF(0);
+  groups.forEach(([nm,cnt,tf])=>{
+    if(cnt<=0)return;tot=wsAdd(tot,tf);
+    const each=wsDiv(tf,wsF(cnt)),ev=wsVal(each);
+    html+='<div class="bc-card"><small>'+nm+(cnt>1?' ('+bcBnD(cnt)+' জন, প্রত্যেকে)':'')+'</small><b>'+wsTxt(each)+'</b>'+
+      '<div style="font-size:13px;color:var(--mute);margin-top:4px">শতকরা '+bcFmt(ev*100,4)+'% | '+bcFmt(ev*1000,3)+' / ১০০০</div>'+
+      '<div style="font-size:13px;color:var(--p1);font-weight:700;margin-top:4px">'+hsAnnaStr(ev*HS_TIL_FULL)+' হিস্যা</div>'+
+      (hasLand?'<div style="font-size:14.5px;font-weight:700;margin-top:6px">'+bcFmt(sq*ev/435.6,4)+' শতক</div><div style="font-size:12.5px;margin-top:2px">'+dlStr(dlPartsBigha(dlSqftToT100(sq*ev,c),c))+'</div>':'')+
+      (cnt>1?'<div style="font-size:12px;color:var(--mute);margin-top:6px">'+nm+'দের মোট: '+wsTxt(tf)+'</div>':'')+'</div>';
+  });
+  out.innerHTML='<div class="bc-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));margin-bottom:10px">'+html+'</div>';
+  let w='';
+  if(!(sons+dau>0)&&!fa)w+='<div class="bc-note" style="margin:0 0 10px">⚠️ সন্তান ও পিতা না থাকলে মৃতের ভাই-বোনও ওয়ারিশ হতে পারেন; এই ক্যালকুলেটর তা ধরে না। আলেম বা আইনজীবীর পরামর্শ নিন।</div>';
+  if(r.unresolved)w+='<div class="bc-note" style="margin:0 0 10px">⚠️ শুধু স্বামী/স্ত্রী থাকলে বাকি অংশ অন্য আত্মীয়দের হতে পারে; এখানে নির্ধারণ করা যায়নি।</div>';
+  r.notes.forEach(n=>{w+='<div class="bc-note" style="margin:0 0 10px;background:#eef6ff;border-color:#c7ddff;color:#1f3b63">ℹ️ '+n+'</div>'});
+  warn.innerHTML=w;
+  sum.innerHTML='মোট বন্টিত অংশ: <b>'+wsTxt(tot)+'</b>'+(tot.n===tot.d?' ✅':'');
+}
+function bcAll(){
+  [bcLand,dlA,dlB,dlC,dlD,dlE,dlF,dlG,dlH,bcTaka,bcDigits,bcDate,bcAge,bcEmi,bcFdr,bcDps].forEach(fn=>{try{fn()}catch(e){console.error(e)}});
+}
+(function(){
+  const sec=bcEl('section-bdcalc');if(!sec)return;
+  sec.addEventListener('input',bcAll);sec.addEventListener('change',bcAll);
+  const d=new Date(),iso=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  bcEl('bcGd').value=iso;bcEl('bcAsof').value=iso;
+  bcEl('bcBy').value=bcG2B(new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()))).y;
+  bcAll();
+})();
 
 /* ===== ওয়েব লিংক গাইড ===== */
 (function(){
